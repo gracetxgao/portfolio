@@ -112,7 +112,7 @@ const ProjectsPanel = () => {
     }
 
     return (
-        <Box sx={{ border: '2px solid black' }} p={5}>
+        <Box sx={{ border: '2px solid black' }} p={10}>
             <h1>projects</h1>
             <Grid container>
                 <Grid item xs={5} sm={5} sx={{ border: '2px solid black' }} m={3}>
