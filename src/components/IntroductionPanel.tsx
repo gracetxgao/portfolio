@@ -8,10 +8,10 @@ const IntroductionPanel = () => {
     return (
         <Box sx={{ border: '2px solid black' }}>
         <Grid container direction={'row'} justifyContent={'space-around'} alignItems={'center'} p={10}>
-            <Grid item xs={6} sm={6} display={'flex'} justifyContent={'space-around'} alignItems={'center'} p={3}>
+            <Grid item xs={6} sm={6} display={'flex'} justifyContent={'space-around'} alignItems={'center'} p={5}>
                 <div>
-                    <h1>hi! my name is grace</h1>
-                    <p>schulich leader scholar and computer science + math student @ UBC</p>
+                    <h1>hi! my name is grace :)</h1>
+                    <p>schulich leader scholar and computer science + math student @ the university of british columbia</p>
                     <a href="https://github.com/gracetxgao" target="_blank">
                         <img src={github} width={'10%'}/>
                     </a>
