@@ -81,12 +81,34 @@ const ProjectCard = (props: ProjectCardTypes) => {
 }
 
 const ProjectsPanel = () => {
-    const [isHovering, setIsHovering] = useState(false)
-    const handleMouseOver = () => {
-        setIsHovering(true)
+    const [isHoveringOne, setIsHoveringOne] = useState(false)
+    const [isHoveringTwo, setIsHoveringTwo] = useState(false)
+    const [isHoveringThree, setIsHoveringThree] = useState(false)
+    const [isHoveringFour, setIsHoveringFour] = useState(false)
+
+    const handleMouseOverOne = () => {
+        setIsHoveringOne(true)
     }
-    const handleMouseOut = () => {
-        setIsHovering(false)
+    const handleMouseOutOne = () => {
+        setIsHoveringOne(false)
+    }
+    const handleMouseOverTwo = () => {
+        setIsHoveringTwo(true)
+    }
+    const handleMouseOutTwo = () => {
+        setIsHoveringTwo(false)
+    }
+    const handleMouseOverThree = () => {
+        setIsHoveringThree(true)
+    }
+    const handleMouseOutThree = () => {
+        setIsHoveringThree(false)
+    }
+    const handleMouseOverFour = () => {
+        setIsHoveringFour(true)
+    }
+    const handleMouseOutFour = () => {
+        setIsHoveringFour(false)
     }
 
     return (
@@ -94,15 +116,15 @@ const ProjectsPanel = () => {
             <h1>projects</h1>
             <Grid container>
                 <Grid item xs={5} sm={5} sx={{ border: '2px solid black' }} m={3}>
-                    <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                        {!isHovering && 
+                    <div onMouseOver={handleMouseOverOne} onMouseOut={handleMouseOutOne}>
+                        {!isHoveringOne && 
                             <ProjectCover 
                             title={"Notable"} 
                             hasAward={true} 
                             awards={["Hack to School 2022", "MesoHacks 2022"]} 
                             tools={[{python}]}/>
                         }
-                        {isHovering && 
+                        {isHoveringOne && 
                             <ProjectCard                            
                                 title={"Notable"} 
                                 hasAward={true} 
@@ -114,14 +136,14 @@ const ProjectsPanel = () => {
                     </div>
                 </Grid>
                 <Grid item xs={5} sm={5} sx={{ border: '2px solid black' }} m={3}>
-                    <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                        {!isHovering && 
+                    <div onMouseOver={handleMouseOverTwo} onMouseOut={handleMouseOutTwo}>
+                        {!isHoveringTwo && 
                             <ProjectCover 
                             title={"Kanplan"} 
                             hasAward={false} 
                             tools={['react']}/>
                         }
-                        {isHovering && 
+                        {isHoveringTwo && 
                             <ProjectCard                            
                                 title={"Kanplan"} 
                                 hasAward={false} 
@@ -132,14 +154,14 @@ const ProjectsPanel = () => {
                     </div>
                 </Grid>
                 <Grid item xs={5} sm={5} sx={{ border: '2px solid black' }} m={3}>
-                    <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                        {!isHovering && 
+                    <div onMouseOver={handleMouseOverThree} onMouseOut={handleMouseOutThree}>
+                        {!isHoveringThree && 
                             <ProjectCover 
                             title={"Serenity"} 
                             hasAward={false} 
                             tools={['react']}/>
                         }
-                        {isHovering && 
+                        {isHoveringThree && 
                             <ProjectCard                            
                                 title={"Serenity"} 
                                 hasAward={false} 
@@ -150,14 +172,14 @@ const ProjectsPanel = () => {
                     </div>
                 </Grid>
                 <Grid item xs={5} sm={5} sx={{ border: '2px solid black' }} m={3}>
-                    <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                        {!isHovering && 
+                    <div onMouseOver={handleMouseOverFour} onMouseOut={handleMouseOutFour}>
+                        {!isHoveringFour && 
                             <ProjectCover 
                             title={"Flip-flash"} 
                             hasAward={false} 
                             tools={['react']}/>
                         }
-                        {isHovering && 
+                        {isHoveringFour && 
                             <ProjectCard                            
                                 title={"Flip-flash"} 
                                 hasAward={false} 
