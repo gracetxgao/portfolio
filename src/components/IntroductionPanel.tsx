@@ -1,15 +1,30 @@
 import { Grid, Box } from '@mui/material';
-// import Box from '@mui/material/Box';
+import photo from '../assets/placeholder.jpg';
+import github from '../assets/github.png';
+import linkedin from '../assets/linkedin.png';
+import resume from '../assets/resume_icon.png';
 
 const IntroductionPanel = () => {
     return (
-        <Box sx={{ border: '2px solid black', height: '10%' }}>
-        <Grid container>
-            <Grid item xs={6} sm={6} sx={{ border: '2px solid black' }}>
-                <p>description</p>
+        <Box sx={{ border: '2px solid black' }}>
+        <Grid container direction={'row'} justifyContent={'space-around'} alignItems={'center'} p={10}>
+            <Grid item xs={6} sm={6} display={'flex'} justifyContent={'space-around'} alignItems={'center'} p={3}>
+                <div>
+                    <h1>hi! my name is grace</h1>
+                    <p>schulich leader scholar and computer science + math student @ UBC</p>
+                    <a href="https://github.com/gracetxgao" target="_blank">
+                        <img src={github} width={'10%'}/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gracetxgao/" target="_blank">
+                        <img src={linkedin} width={'10%'}/>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1zFvdwJTRtwMAWenlOFJa1Q-Bu0xb_rq7/view?usp=sharing" target="_blank">
+                        <img src={resume} width={'10%'}/>
+                    </a>
+                </div>
             </Grid>
-            <Grid item xs={6} sm={6} sx={{ border: '2px solid black' }}>
-                <p>photo</p>
+            <Grid item xs={6} sm={6} p={3}>
+                <img src={photo} width={'60%'} style={{ borderRadius: '20%'}}/>
             </Grid>
         </Grid>
     </Box>
