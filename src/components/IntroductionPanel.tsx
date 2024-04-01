@@ -1,5 +1,5 @@
 import { Grid, Box } from '@mui/material';
-import photo from '../assets/placeholder.jpg';
+import photo from '../assets/photo.jpeg';
 import github from '../assets/github.png';
 import linkedin from '../assets/linkedin.png';
 import resume from '../assets/resume_icon.png';
