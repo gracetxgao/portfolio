@@ -5,18 +5,22 @@ import ProjectsPanel from './components/ProjectsPanel';
 import ExperiencePanel from './components/ExperiencePanel';
 import SkillsPanel from './components/SkillsPanel';
 import AboutPanel from './components/AboutPanel';
+import NavBar from './components/NavBar';
 
 const App = () => {
 	return (
-        <Box sx={{ width: '100%' }}>
-            <Stack spacing={2}>
-                <IntroductionPanel />
-                <ProjectsPanel />
-                <ExperiencePanel />
-                <SkillsPanel />
-                <AboutPanel />
-            </Stack>
-        </Box>
+        <>
+            <NavBar />
+            <Box sx={{ width: '100%' }}>
+                <Stack spacing={2}>
+                    <IntroductionPanel />
+                    <ProjectsPanel />
+                    <ExperiencePanel />
+                    <SkillsPanel />
+                    <AboutPanel />
+                </Stack>
+            </Box>
+        </>
     )
 }
 

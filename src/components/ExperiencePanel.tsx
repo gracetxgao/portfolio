@@ -21,13 +21,13 @@ const TabPanel = (props: TabPanelProps) => {
         {value === index && (
           <Box sx={{ p: 3 }}>
             <Grid container>
-                <Grid item xs={7} sm={7} sx={{ border: '2px solid black' }} p={3} direction={'column'} justifyContent={'space-evenly'} alignItems={'stretch'}>
+                <Grid item xs={7} sm={7} sx={{ border: '2px solid black' }} p={3} justifyContent={'space-evenly'} alignItems={'stretch'}>
                     <h1>{position}</h1>
                     <h3>{dates}</h3>
                     <ul>
                         {description.map(point => {
                             return (
-                                <li>{point}</li>
+                                <li key={description.indexOf(point)}>{point}</li>
                             )
                         })}
                     </ul>

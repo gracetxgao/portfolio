@@ -21,7 +21,7 @@ const ProjectCover = (props: ProjectCoverTypes) => {
                 {hasAward && 
                     awards?.map(award => {
                         return (
-                            <p>{award}</p>
+                            <p key={awards.indexOf(award)}>{award}</p>
                         )
                     })
                 }
@@ -32,7 +32,7 @@ const ProjectCover = (props: ProjectCoverTypes) => {
             <Grid item xs={6} sm={6} sx={{ border: '2px solid black' }} display={'flex'} justifyContent={'space-around'} alignItems={'center'}>
                 {tools.map(tool => {
                     return (
-                        <img src={python} width={'10%'}/>
+                        <img src={python} width={'10%'} key={tools.indexOf(tool)}/>
                     )
                 })}
             </Grid>
@@ -62,7 +62,7 @@ const ProjectCard = (props: ProjectCardTypes) => {
                     {hasAward && 
                         awards?.map(award => {
                             return (
-                                <p>{award}</p>
+                                <p key={awards.indexOf(award)}>{award}</p>
                             )
                         })
                     }
@@ -70,7 +70,7 @@ const ProjectCard = (props: ProjectCardTypes) => {
                 <Grid item xs={4} sm={4} sx={{ border: '2px solid black' }} display={'flex'} justifyContent={'space-around'} alignItems={'flex-start'}>
                     {tools.map(tool => {
                         return (
-                            <img src={python} width={'10%'}/>
+                            <img src={python} width={'10%'} key={tools.indexOf(tool)}/>
                         )
                     })}
                 </Grid>
