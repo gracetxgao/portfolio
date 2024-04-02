@@ -1,4 +1,5 @@
 import { Stack } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import IntroductionPanel from './components/IntroductionPanel';
 import ProjectsPanel from './components/ProjectsPanel';
@@ -6,13 +7,18 @@ import ExperiencePanel from './components/ExperiencePanel';
 import SkillsPanel from './components/SkillsPanel';
 import AboutPanel from './components/AboutPanel';
 import NavBar from './components/NavBar';
-import { useState } from 'react';
+
+const theme = createTheme({
+    typography: {
+        fontFamily: [
+            'Roboto',
+        ].join(','),
+    },
+});
 
 const App = () => {
-    const [dark, setDark] = useState(false)
-
 	return (
-        <>
+        <ThemeProvider theme={theme}>
             <NavBar />
             <Box sx={{ width: '100%', backgroundColor: '#EEF8FF'}}>
                 <Stack spacing={2}>
@@ -23,7 +29,7 @@ const App = () => {
                     <AboutPanel />
                 </Stack>
             </Box>
-        </>
+        </ThemeProvider>
     )
 }
 
