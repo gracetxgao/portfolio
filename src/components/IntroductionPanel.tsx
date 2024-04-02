@@ -11,7 +11,9 @@ const IntroductionPanel = () => {
                 <Grid item xs={6} sm={6} p={5} textAlign={'end'}>
                     <div>
                         <h1 style={{ fontSize: '400%', marginRight: '5%' }}>hi, i'm grace :)</h1>
-                        <p style={{ fontSize: '200%', marginLeft: '5%', marginRight: '5%' }}>schulich leader scholar and computer science + math student @ the university of british columbia</p>
+                        <p style={{ fontSize: '200%', marginLeft: '5%', marginRight: '5%' }}>
+                            <a href='https://www.tricitynews.com/local-news/port-moody-grad-receives-100k-scholarship-for-science-studies-7203967' target="_blank" style={{ color: 'black' }}>2023 schulich leader scholar</a> and 
+                            computer science + math student @ the university of british columbia</p>
                         <div style={{ marginRight: '5%' }}>
                             <a href="https://github.com/gracetxgao" target="_blank">
                                 <img src={github} width={'8%'} style={{ paddingRight: '5%'}}/>
