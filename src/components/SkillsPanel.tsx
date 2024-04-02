@@ -3,6 +3,7 @@ import { useState } from 'react';
 import python from '../assets/python.png';
 import typescript from '../assets/typescript.png';
 import react from '../assets/react.png';
+import java from '../assets/java.png';
 
 interface SkillProps {
     tool: String;
@@ -22,13 +23,17 @@ const Skill = (props: SkillProps) => {
     return (
         <Grid item xs={3} sm={3} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
             {!isHovering && 
-                <Stack display={'flex'} justifyContent={'space-around'} alignItems={'center'} borderRadius={'10%'} boxShadow={'10px 10px 5px black'} m={5}>
+                <Stack display={'flex'} justifyContent={'space-around'} alignItems={'center'} 
+                        borderRadius={'10%'} boxShadow={'10px 10px 5px black'} 
+                        m={3} bgcolor={'white'} paddingTop={3}>
                     {logo}
                     <h3>{tool}</h3>
                 </Stack>
             }
             {isHovering && 
-                <Stack display={'flex'} justifyContent={'space-around'} alignItems={'center'} borderRadius={'10%'} boxShadow={'10px 10px 5px black'} m={5} style={{ scale: '110%'}}>
+                <Stack display={'flex'} justifyContent={'space-around'} alignItems={'center'} 
+                        borderRadius={'10%'} boxShadow={'10px 10px 5px black'} m={3} 
+                        style={{ scale: '110%'}} bgcolor={'white'} paddingTop={3}>
                     {logo}
                     <h3>{tool}</h3>
                 </Stack>
@@ -39,13 +44,13 @@ const Skill = (props: SkillProps) => {
 
 const SkillsPanel = () => {
     return (
-        <Box sx={{ border: '2px solid black' }} p={10}>
-        <h1>skills</h1>
+        <Box p={10}>
+        <h1 style={{ paddingLeft: '30px' }}>skills</h1>
         <Grid container>
             <Skill tool={"python"} logo={<img src={python} width={'50%'}/>}/>
             <Skill tool={"typescript"} logo={<img src={typescript} width={'50%'}/>}/>
             <Skill tool={"react"} logo={<img src={react} width={'50%'}/>}/>
-            <Skill tool={"python"} logo={<img src={python} width={'50%'}/>}/>
+            <Skill tool={"java"} logo={<img src={java} width={'50%'}/>}/>
         </Grid>
     </Box>
     )
