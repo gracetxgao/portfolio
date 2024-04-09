@@ -45,14 +45,14 @@ const Skill = (props: SkillProps) => {
 const SkillsPanel = () => {
     return (
         <Box p={10}>
-        <h1 style={{ paddingLeft: '30px' }}>skills</h1>
-        <Grid container>
-            <Skill tool={"python"} logo={<img src={python} width={'50%'}/>}/>
-            <Skill tool={"typescript"} logo={<img src={typescript} width={'50%'}/>}/>
-            <Skill tool={"react"} logo={<img src={react} width={'50%'}/>}/>
-            <Skill tool={"java"} logo={<img src={java} width={'50%'}/>}/>
-        </Grid>
-    </Box>
+            <h1 style={{ paddingLeft: '30px' }}>skills</h1>
+            <Grid container>
+                <Skill tool={"python"} logo={<img src={python} width={'50%'}/>}/>
+                <Skill tool={"typescript"} logo={<img src={typescript} width={'50%'}/>}/>
+                <Skill tool={"react"} logo={<img src={react} width={'50%'}/>}/>
+                <Skill tool={"java"} logo={<img src={java} width={'50%'}/>}/>
+            </Grid>
+        </Box>
     )
 }
 

@@ -75,7 +75,7 @@ interface ProjectCardTypes {
 }
 
 const ProjectCard = (props: ProjectCardTypes) => {
-    const { title, hasAward, hackathons, hasHackathon, tools, description, link } = props
+    const { title, hackathons, hasHackathon, tools, description, link } = props
     return (
         <>
             <Grid
@@ -146,10 +146,10 @@ const ProjectsPanel = () => {
     }
 
     return (
-        <Box sx={{ border: '2px solid black' }} p={10} >
+        <Box p={10} >
             <h1 style={{ paddingLeft: '30px' }}>projects</h1>
             <Grid container>
-                <Grid item xs={6} sm={6} sx={{ border: '2px solid black' }}>
+                <Grid item xs={6} sm={6}>
                     <div onMouseOver={handleMouseOverOne} onMouseOut={handleMouseOutOne}
                         style={{ marginBlock: '10%', marginInlineEnd: '5%', paddingLeft: '30px' }}>
                         {!isHoveringOne && 
@@ -173,7 +173,7 @@ const ProjectsPanel = () => {
                         }
                     </div>
                 </Grid>
-                <Grid item xs={6} sm={6} sx={{ border: '2px solid black' }}>
+                <Grid item xs={6} sm={6}>
                     <div onMouseOver={handleMouseOverTwo} onMouseOut={handleMouseOutTwo}
                         style={{ marginBlock: '10%', marginInlineStart: '5%', paddingRight: '30px' }}>
                         {!isHoveringTwo && 
