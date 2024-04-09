@@ -11,9 +11,8 @@ const IntroductionPanel = () => {
                 <Grid item xs={6} sm={6} p={5} textAlign={'end'}>
                     <div>
                         <h1 style={{ fontSize: '400%', marginRight: '5%' }}>hi, i'm grace :)</h1>
-                        <p style={{ fontSize: '200%', marginLeft: '5%', marginRight: '5%' }}>
-                            <a href='https://www.tricitynews.com/local-news/port-moody-grad-receives-100k-scholarship-for-science-studies-7203967' target="_blank" style={{ color: 'black' }}>2023 schulich leader scholar</a> and 
-                            computer science + math student @ the university of british columbia</p>
+                        <p style={{ fontSize: '200%', marginLeft: '28%', marginRight: '5%' }}>
+                            <a href='https://www.tricitynews.com/local-news/port-moody-grad-receives-100k-scholarship-for-science-studies-7203967' target="_blank" style={{ color: 'black' }}>2023 schulich leader scholar</a> and computer science + math student @ ubc</p>
                         <div style={{ marginRight: '5%' }}>
                             <a href="https://github.com/gracetxgao" target="_blank">
                                 <img src={github} width={'8%'} style={{ paddingRight: '5%'}}/>
@@ -28,7 +27,7 @@ const IntroductionPanel = () => {
                     </div>
                 </Grid>
                 <Grid item xs={6} sm={6} p={3}>
-                    <img src={photo} width={'70%'} style={{ borderRadius: '20%'}}/>
+                    <img src={photo} width={'70%'} style={{ borderRadius: '20%', boxShadow: '10px 10px 5px gray'}}/>
                 </Grid>
             </Grid>
         </Box>
