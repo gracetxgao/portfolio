@@ -5,6 +5,7 @@ import flask from '../assets/flask.png';
 import github from '../assets/github.png';
 import react from '../assets/react.png';
 import typescript from '../assets/typescript.png';
+import java from '../assets/java.png';
 import { useState } from 'react';
 
 interface ProjectCoverTypes {
@@ -29,6 +30,7 @@ const ProjectCover = (props: ProjectCoverTypes) => {
             backgroundSize: 'cover',
             backgroundColor: '#B8D4E8',
             borderRadius: '10%',
+            padding: '10px',
             '&::before': {
                 content: '""',
                 position: 'absolute',
@@ -36,28 +38,34 @@ const ProjectCover = (props: ProjectCoverTypes) => {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                backgroundColor: 'rgba(184, 212, 232, 0.9)',
+                backgroundColor: 'rgba(184, 212, 232, 0.8)',
                 borderRadius: '10%',
+                padding: '10px',
             },
         }}
         >
-            {hasAward && 
-                <Grid item xs={3} sm={3} sx={{ zIndex: 100}} paddingLeft={5} paddingTop={4}>
-                    <img src={award} width={'40%'}/>
-                </Grid>
-            }
-            {hasHackathon &&
-                <Grid item xs={hasAward? 9: 12} sm={hasAward? 9: 12} sx={{ zIndex: 100 }} >
-                    <p style={{ fontSize: '200%', paddingRight: '10%', whiteSpace: 'pre-wrap', textAlign: 'end', paddingTop: '2%'}}>
-                        {hackathons}
-                    </p>
-                </Grid>
-            }
-            <Grid item xs={12} sm={12} sx={{ zIndex: 100 }} p={15}/>
-            <Grid item xs={6} sm={6} sx={{ zIndex: 100 }} display={'flex'} justifyContent={'flex-start'} alignItems={'center'} paddingLeft={5} fontSize={'200%'}>
+            <Grid container alignItems="flex-start">
+                {hasAward && (
+                    <Grid item xs={12} sm={3} sx={{ zIndex: 100, paddingBottom: '2%', paddingLeft: '5%', paddingTop: '8%'}}>
+                        <img src={award} style={{ width: '40%', height: 'auto' }} alt="Award" />
+                    </Grid>
+                )}
+                {hasHackathon && (
+                    <Grid item xs={12} sm={hasAward ? 9 : 12} sx={{ zIndex: 100, paddingBottom: '2%'}}>
+                        <p style={{ fontSize: '200%', paddingRight: '10%', whiteSpace: 'pre-wrap', textAlign: 'end', verticalAlign: 'middle' }}>
+                            {hackathons}
+                        </p>
+                    </Grid>
+                )}
+            </Grid>
+
+
+            <Grid item xs={12} sm={12} sx={{ zIndex: 100, paddingBottom: '10px' }} />
+
+            <Grid item xs={6} sm={6} sx={{ zIndex: 100 }} display={'flex'} justifyContent={'flex-start'} alignItems={'flex-end'} paddingLeft={5} fontSize={'120%'}>
                 <h1>{title}</h1>
             </Grid>
-            <Grid item xs={6} sm={6} sx={{ zIndex: 100 }} display={'flex'} justifyContent={'space-around'} alignItems={'center'} paddingRight={3}>
+            <Grid item xs={6} sm={6} sx={{ zIndex: 100 }} display={'flex'} justifyContent={'space-around'} alignItems={'flex-end'} paddingRight={3} paddingBottom={2}>
                 {tools.map(tool => tool)}
             </Grid>
         </Grid>
@@ -101,7 +109,7 @@ const ProjectCard = (props: ProjectCardTypes) => {
                 <Grid item xs={hasHackathon ? 6 : 12} sm={hasHackathon ? 6 : 12} sx={{ height: '20%' }} display={'flex'} justifyContent={'space-evenly'} alignItems={'flex-start'} marginTop={10}>
                     {tools.map(tool => tool)}
                 </Grid>
-                <Grid item xs={12} sm={12} sx={{ height: '60%' }} display={'flex'} justifyContent={'center'} alignItems={'flex-start'} paddingTop={1} paddingInline={20}>
+                <Grid item xs={12} sm={12} sx={{ height: '60%' }} display={'flex'} justifyContent={'center'} alignItems={'flex-start'} paddingTop={1} paddingInline={'20%'}>
                     <p style={{ fontSize: '130%', textAlign: 'center'}}>{description}</p>
                 </Grid>
                 <Grid item xs={12} sm={12} sx={{ height: '12%' }} display={'flex'} justifyContent={'center'} marginTop={-20}>
@@ -118,7 +126,6 @@ const ProjectsPanel = () => {
     const [isHoveringOne, setIsHoveringOne] = useState(false)
     const [isHoveringTwo, setIsHoveringTwo] = useState(false)
     const [isHoveringThree, setIsHoveringThree] = useState(false)
-    const [isHoveringFour, setIsHoveringFour] = useState(false)
 
     const handleMouseOverOne = () => {
         setIsHoveringOne(true)
@@ -138,12 +145,6 @@ const ProjectsPanel = () => {
     const handleMouseOutThree = () => {
         setIsHoveringThree(false)
     }
-    const handleMouseOverFour = () => {
-        setIsHoveringFour(true)
-    }
-    const handleMouseOutFour = () => {
-        setIsHoveringFour(false)
-    }
 
     return (
         <Box p={10} >
@@ -157,7 +158,7 @@ const ProjectsPanel = () => {
                                 title={"Notable"} 
                                 hasAward={true} 
                                 hasHackathon={true} 
-                                hackathons={"Hack to School 2022 | MesoHacks 2022"} 
+                                hackathons={"Hack to School 2022\nMesoHacks 2022"} 
                                 tools={[<img src={python} width={'30%'}/>,<img src={flask} width={'40%'} />]}
                                 image={'/src/assets/notable.png'}/>
                         }
@@ -167,7 +168,7 @@ const ProjectsPanel = () => {
                                 hasAward={true} 
                                 hasHackathon={true} 
                                 hackathons={"Hack to School 2022  MesoHacks 2022"} 
-                                tools={[<img src={python} height={'100%'}/>,<img src={flask} height={'100%'} />]}
+                                tools={[<img src={python} height={'80%'}/>,<img src={flask} height={'80%'} />]}
                                 description={"a note-sharing web app. best education hack @ mesohacks 2022 and 2nd overall @ hack to school 2022"}
                                 link={'https://github.com/gracetxgao/notable'}/>
                         }
@@ -178,12 +179,12 @@ const ProjectsPanel = () => {
                         style={{ marginBlock: '10%', marginInlineStart: '5%', paddingRight: '30px' }}>
                         {!isHoveringTwo && 
                             <ProjectCover 
-                            title={"DareVenture"} 
-                            hasAward={false} 
-                            hasHackathon={true} 
-                            hackathons={"YouCode 2024"} 
-                            tools={[<img src={react} width={'30%'}/>,<img src={typescript} width={'40%'} />]}
-                            image={'/src/assets/dareventure.png'}/>
+                                title={"DareVenture"} 
+                                hasAward={false} 
+                                hasHackathon={true} 
+                                hackathons={"YouCode 2024"} 
+                                tools={[<img src={react} width={'25%'}/>,<img src={typescript} width={'30%'} />]}
+                                image={'/src/assets/dareventure.png'}/>
                         }
                         {isHoveringTwo && 
                             <ProjectCard                            
@@ -197,44 +198,28 @@ const ProjectsPanel = () => {
                         }
                     </div>
                 </Grid>
-                {/* <Grid item xs={6} sm={6} sx={{ border: '2px solid black' }} p={3}>
-                    <div onMouseOver={handleMouseOverThree} onMouseOut={handleMouseOutThree}>
+                <Grid item xs={6} sm={6}>
+                    <div onMouseOver={handleMouseOverThree} onMouseOut={handleMouseOutThree}
+                        style={{ marginBlock: '10%', marginInlineStart: '5%', paddingRight: '30px' }}>
                         {!isHoveringThree && 
                             <ProjectCover 
-                            title={"Serenity"} 
-                            hasAward={false} 
-                            tools={['react']}
-                            image={'/src/assets/notable.png'}/>
+                                title={"Stock Master"} 
+                                hasAward={false} 
+                                hasHackathon={false} 
+                                tools={[<img src={java} height={'30%'} width={'auto'}/>]}
+                                image={'/src/assets/stock.png'}/>
                         }
                         {isHoveringThree && 
                             <ProjectCard                            
-                                title={"Serenity"} 
+                                title={"Stock Master"} 
                                 hasAward={false} 
-                                tools={['react']}
-                                description={"description"}
-                                link={'link'}/>
+                                hasHackathon={false} 
+                                tools={[<img src={java} height={'100%'}/>]}
+                                description={"a stock market simulator, built for CPSC 210"}
+                                link={"https://github.students.cs.ubc.ca/CPSC210-2023W-T2/project_a8b8b"}/>
                         }
                     </div>
                 </Grid>
-                <Grid item xs={6} sm={6} sx={{ border: '2px solid black' }} p={3}>
-                    <div onMouseOver={handleMouseOverFour} onMouseOut={handleMouseOutFour}>
-                        {!isHoveringFour && 
-                            <ProjectCover 
-                            title={"Flip-flash"} 
-                            hasAward={false} 
-                            tools={['react']}
-                            image={'/src/assets/notable.png'}/>
-                        }
-                        {isHoveringFour && 
-                            <ProjectCard                            
-                                title={"Flip-flash"} 
-                                hasAward={false} 
-                                tools={['react']}
-                                description={"description"}
-                                link={'link'}/>
-                        }
-                    </div>
-                </Grid> */}
             </Grid>
         </Box>
     )
