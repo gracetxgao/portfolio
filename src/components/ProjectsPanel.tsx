@@ -235,7 +235,7 @@ const ProjectsPanel = () => {
                                 hasHackathon={true} 
                                 hackathons={"CPSC 210"} 
                                 tools={[<img src={java} width={'10%'}/>]}
-                                description={"A stock market simulator. Built for CPSC 210 term project."}
+                                description={"A stock market simulator with data visualization components. Built for my CPSC 210 term project."}
                                 link={"https://github.students.cs.ubc.ca/CPSC210-2023W-T2/project_a8b8b"}
                                 image={stock}/>
                         }

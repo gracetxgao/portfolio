@@ -53,7 +53,7 @@ const TabPanel = (props: TabPanelProps) => {
   
     return (
       <Box >
-        <Box sx={{ borderBottom: 1, borderColor: 'divider', backgroundColor: '#B8D4E8', borderRadius: '20px 20px 0px 0px'}} paddingTop={3}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider', backgroundColor: '#B8D4E8', borderRadius: '20px 20px 0px 0px'}}>
           <Tabs value={value} onChange={handleChange}>
             <Tab label="TRIUMF" />
             <Tab label="UBC Launch Pad" />
