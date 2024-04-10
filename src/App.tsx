@@ -10,11 +10,9 @@ import NavBar from './components/NavBar';
 
 const theme = createTheme({
     typography: {
-        fontFamily: [
-            'Roboto',
-        ].join(','),
+      fontFamily: ['Lato', 'sans-serif'].join(','),
     },
-});
+  });
 
 const App = () => {
 	return (

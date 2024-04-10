@@ -25,17 +25,17 @@ const Skill = (props: SkillProps) => {
             {!isHovering && 
                 <Stack display={'flex'} justifyContent={'space-around'} alignItems={'center'} 
                         borderRadius={'10%'} boxShadow={'10px 10px 5px black'} 
-                        m={3} bgcolor={'white'} paddingTop={3} height={'320px'}>
+                        m={3} bgcolor={'white'} height={'320px'}>
                     {logo}
-                    <h3>{tool}</h3>
+                    {/* <h3>{tool}</h3> */}
                 </Stack>
             }
             {isHovering && 
                 <Stack display={'flex'} justifyContent={'space-around'} alignItems={'center'} 
                         borderRadius={'10%'} boxShadow={'10px 10px 5px black'} m={3} 
-                        style={{ scale: '110%'}} bgcolor={'white'} paddingTop={3} height={'320px'}>
+                        style={{ scale: '110%'}} bgcolor={'white'} height={'320px'}>
                     {logo}
-                    <h3>{tool}</h3>
+                    {/* <h3>{tool}</h3> */}
                 </Stack>
             }
         </Grid>
@@ -45,12 +45,12 @@ const Skill = (props: SkillProps) => {
 const SkillsPanel = () => {
     return (
         <Box p={10}>
-            <h1 style={{ paddingLeft: '30px' }}>skills</h1>
+            <h1 style={{ paddingLeft: '30px' }}>Skills</h1>
             <Grid container>
-                <Skill tool={"python"} logo={<img src={python} width={'50%'}/>}/>
-                <Skill tool={"typescript"} logo={<img src={typescript} width={'50%'}/>}/>
-                <Skill tool={"react"} logo={<img src={react} width={'50%'}/>}/>
-                <Skill tool={"java"} logo={<img src={java} width={'50%'}/>}/>
+                <Skill tool={"Python"} logo={<img src={python} width={'45%'}/>}/>
+                <Skill tool={"TypeScript"} logo={<img src={typescript} width={'50%'}/>}/>
+                <Skill tool={"React"} logo={<img src={react} width={'50%'}/>}/>
+                <Skill tool={"Java"} logo={<img src={java} width={'40%'}/>}/>
             </Grid>
         </Box>
     )
