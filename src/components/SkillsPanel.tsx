@@ -10,7 +10,7 @@ interface SkillProps {
     logo: JSX.Element;
 }
 const Skill = (props: SkillProps) => {
-    const { tool, logo } = props
+    const { logo } = props
     const [isHovering, setIsHovering] = useState(false)
 
     const handleMouseOver = () => {

@@ -6,7 +6,6 @@ import ProjectsPanel from './components/ProjectsPanel';
 import ExperiencePanel from './components/ExperiencePanel';
 import SkillsPanel from './components/SkillsPanel';
 import AboutPanel from './components/AboutPanel';
-import NavBar from './components/NavBar';
 
 const theme = createTheme({
     typography: {
