@@ -7,6 +7,9 @@ import react from '../assets/react.png';
 import typescript from '../assets/typescript.png';
 import java from '../assets/java.png';
 import { useState } from 'react';
+import notable from '../assets/notable.png';
+import dareventure from '../assets/dareventure.png';
+import stock from '../assets/stock.png';
 
 interface ProjectCoverTypes {
     title: String;
@@ -173,7 +176,7 @@ const ProjectsPanel = () => {
                                 hasHackathon={true} 
                                 hackathons={"Hack to School 2022\nMesoHacks 2022"} 
                                 tools={[<img src={python} width={'30%'}/>,<img src={flask} width={'40%'} />]}
-                                image={'/src/assets/notable.png'}/>
+                                image={notable}/>
                         }
                         {isHoveringOne && 
                             <ProjectCard                            
@@ -184,7 +187,7 @@ const ProjectsPanel = () => {
                                 tools={[<img src={python} width={'20%'}/>,<img src={flask} width={'30%'} />]}
                                 description={"A note-sharing web app. Best Education Hack @ MesoHacks 2022 and 2nd overall @ Hack to School 2022"}
                                 link={'https://github.com/gracetxgao/notable'}
-                                image={'/src/assets/notable.png'}/>
+                                image={notable}/>
                         }
                     </div>
                 </Grid>
@@ -198,7 +201,7 @@ const ProjectsPanel = () => {
                                 hasHackathon={true} 
                                 hackathons={"YouCode 2024"} 
                                 tools={[<img src={react} width={'25%'}/>,<img src={typescript} width={'30%'} />]}
-                                image={'/src/assets/dareventure.png'}/>
+                                image={dareventure}/>
                         }
                         {isHoveringTwo && 
                             <ProjectCard                            
@@ -209,7 +212,7 @@ const ProjectsPanel = () => {
                                 tools={[<img src={react} width={'25%'}/>,<img src={typescript} width={'25%'} />]}
                                 description={"A mobile app promoting well-being by offering rewards and offers with partnering companies for completing wellness tasks"}
                                 link={"https://github.com/gracetxgao/youcode2024"}
-                                image={'/src/assets/dareventure.png'}/>
+                                image={dareventure}/>
                         }
                     </div>
                 </Grid>
@@ -223,7 +226,7 @@ const ProjectsPanel = () => {
                                 hasHackathon={true} 
                                 hackathons={"CPSC 210"} 
                                 tools={[<img src={java} width={'30%'}/>]}
-                                image={'/src/assets/stock.png'}/>
+                                image={stock}/>
                         }
                         {isHoveringThree && 
                             <ProjectCard                            
@@ -234,7 +237,7 @@ const ProjectsPanel = () => {
                                 tools={[<img src={java} width={'10%'}/>]}
                                 description={"A stock market simulator. Built for CPSC 210 term project."}
                                 link={"https://github.students.cs.ubc.ca/CPSC210-2023W-T2/project_a8b8b"}
-                                image={'/src/assets/stock.png'}/>
+                                image={stock}/>
                         }
                     </div>
                 </Grid>
