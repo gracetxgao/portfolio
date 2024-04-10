@@ -1,4 +1,4 @@
-grace's portfolio website
+my portfolio website
 
 images: <br/>
 <a target="_blank" href="https://icons8.com/icon/123603/react-native">React Native</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br/>
