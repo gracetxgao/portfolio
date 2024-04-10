@@ -25,7 +25,7 @@ const Skill = (props: SkillProps) => {
             {!isHovering && 
                 <Stack display={'flex'} justifyContent={'space-around'} alignItems={'center'} 
                         borderRadius={'10%'} boxShadow={'10px 10px 5px black'} 
-                        m={3} bgcolor={'white'} height={'320px'}>
+                        m={3} bgcolor={'white'} height={'120%'}>
                     {logo}
                     {/* <h3>{tool}</h3> */}
                 </Stack>
@@ -33,7 +33,7 @@ const Skill = (props: SkillProps) => {
             {isHovering && 
                 <Stack display={'flex'} justifyContent={'space-around'} alignItems={'center'} 
                         borderRadius={'10%'} boxShadow={'10px 10px 5px black'} m={3} 
-                        style={{ scale: '110%'}} bgcolor={'white'} height={'320px'}>
+                        style={{ scale: '110%'}} bgcolor={'white'} height={'120%'}>
                     {logo}
                     {/* <h3>{tool}</h3> */}
                 </Stack>

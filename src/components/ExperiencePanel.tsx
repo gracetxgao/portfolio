@@ -19,20 +19,20 @@ const TabPanel = (props: TabPanelProps) => {
     return (
       <div hidden={value !== index} id={`simple-tabpanel-${index}`}>
         {value === index && (
-          <Box sx={{ p: 3 }}>
-            <Grid container>
-                <Grid item xs={7} sm={7} sx={{ border: '2px solid black' }} p={3} justifyContent={'space-evenly'} alignItems={'stretch'}>
+          <Box>
+            <Grid container sx={{ backgroundColor: 'white', borderRadius: '0 0 20px 20px', padding: '2%'}}>
+                <Grid item xs={12} sm={7} paddingInline={'10%'} paddingBlock={4} justifyContent={'space-evenly'} alignItems={'flex-start'}>
                     <h1>{position}</h1>
                     <h3>{dates}</h3>
-                    <ul>
+                    <ul style={{ fontSize: '150%'}}>
                         {description.map(point => {
                             return (
-                                <li key={description.indexOf(point)}>{point}</li>
+                                <li key={index} dangerouslySetInnerHTML={{ __html: point }} />
                             )
                         })}
                     </ul>
                 </Grid>
-                <Grid item xs={5} sm={5} sx={{ border: '2px solid black' }}>
+                <Grid item xs={5} sm={5} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start'}} paddingBlock={4}>
                     {image}
                 </Grid>
             </Grid>
@@ -50,23 +50,23 @@ const TabPanel = (props: TabPanelProps) => {
     };
   
     return (
-      <Box>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+      <Box >
+        <Box sx={{ borderBottom: 1, borderColor: 'divider', backgroundColor: '#B8D4E8', borderRadius: '20px 20px 0px 0px'}} paddingTop={3}>
           <Tabs value={value} onChange={handleChange}>
-            <Tab label="triumf" />
-            <Tab label="launch pad" />
+            <Tab label="TRIUMF" />
+            <Tab label="UBC Launch Pad" />
           </Tabs>
         </Box>
         <TabPanel value={value} index={0} 
-            position={"summer research intern"}
-            dates={"july - aug 2023"}
-            description={["things", "more things"]}
+            position={"Summer Research Intern"}
+            dates={"Jul - Aug 2023"}
+            description={["Worked with the <a href='https://fiveyearplan.triumf.ca/teams-tools/targets-and-ion-sources/index.html#:~:text=TRIUMF's%20Target%20and%20Ion%20Source,more%20intense%2C%20and%20purer%20RIBs.' target='_blank' style='color: black;'>Targets & Ion Sources Development</a> group at ISAC II on the Radioactive Ion Beam Optimizer (RIBO) simulation program", "See the <a href='https://drive.google.com/file/d/1jnJf5IfQ4Fnweu0Bgg-tNGIlGIAKeyFu/view?usp=sharingposter' target='_blank' style='color: black;'>poster</a> my team created and presented, and read more about the work I did on my resume!"]}
             image={<img src={triumf} width={'60%'} style={{ borderRadius: '10%'}}/>}>
         </TabPanel>
         <TabPanel value={value} index={1} 
-            position={"software developer"}
-            dates={"sep 2023 - apr 2024"}
-            description={["things", "more things"]}
+            position={"Software Developer"}
+            dates={"Sep 2023 - Apr 2024"}
+            description={["Collaborated with a team of seven to develop EpiLog, a seizure-tracking mobile application for epilepsy patients", "Used React Native and Firebase for the first time!"]}
             image={<img src={launchpad} width={'60%'} style={{ borderRadius: '10%'}}/>}>
         </TabPanel>
       </Box>
@@ -75,9 +75,9 @@ const TabPanel = (props: TabPanelProps) => {
 
 const ExperiencePanel = () => {
     return (
-        <Box sx={{ border: '2px solid black' }} p={10}>
-            <h1>experience</h1>
-            <ExperienceTabs></ExperienceTabs>
+        <Box p={10}>
+            <h1>Experience</h1>
+            <ExperienceTabs/>
         </Box>
     )
 }
