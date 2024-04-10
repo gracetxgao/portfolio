@@ -79,10 +79,11 @@ interface ProjectCardTypes {
     tools: Array<any>;
     description: String;
     link: string;
+    image: String;
 }
 
 const ProjectCard = (props: ProjectCardTypes) => {
-    const { title, hackathons, hasHackathon, tools, description, link } = props
+    const { title, hackathons, hasHackathon, tools, description, link, image } = props
     return (
         <>
             <Grid
@@ -90,28 +91,41 @@ const ProjectCard = (props: ProjectCardTypes) => {
                 sx={{
                     height: '500px',
                     position: 'relative',
+                    backgroundImage: `url(${image})`,
                     backgroundSize: 'cover',
                     backgroundColor: '#B8D4E8',
                     borderRadius: '10%',
+                    // padding: '10px',
+                    '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        backgroundColor: 'rgba(184, 212, 232, 0.8)',
+                        borderRadius: '10%',
+                        padding: '10px',
+                    },
                 }}
                 >
-                <Grid item xs={12} sm={12} textAlign={'center'} fontSize={'200%'} sx={{ height: '10%'}}>
+                <Grid item xs={12} sm={12} textAlign={'center'} fontSize={'200%'} sx={{ height: '10%', zIndex: 100 }}>
                     <h1>{title}</h1>
                 </Grid>
                 {hasHackathon &&
-                    <Grid item xs={6} sm={6} display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ height: '20%' }} marginTop={10} paddingInline={5}>
+                    <Grid item xs={6} sm={6} display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ height: '20%', zIndex: 100 }} marginTop={10} paddingInline={5}>
                         <p style={{ fontSize: '150%', whiteSpace: 'pre-wrap', textAlign: 'center'}}>
                             {hackathons}
                         </p>
                     </Grid>
                 }
-                <Grid item xs={hasHackathon ? 6 : 12} sm={hasHackathon ? 6 : 12} sx={{ height: '20%' }} display={'flex'} justifyContent={'space-evenly'} alignItems={'center'} marginTop={10}>
+                <Grid item xs={hasHackathon ? 6 : 12} sm={hasHackathon ? 6 : 12} sx={{ height: '20%', zIndex: 100 }} display={'flex'} justifyContent={'space-evenly'} alignItems={'center'} marginTop={10}>
                     {tools.map(tool => tool)}
                 </Grid>
-                <Grid item xs={12} sm={12} sx={{ height: '60%' }} display={'flex'} justifyContent={'center'} alignItems={'flex-start'} paddingTop={1} paddingInline={'20%'}>
+                <Grid item xs={12} sm={12} sx={{ height: '60%', zIndex: 100 }} display={'flex'} justifyContent={'center'} alignItems={'flex-start'} paddingTop={1} paddingInline={'20%'}>
                     <p style={{ fontSize: '130%', textAlign: 'center'}}>{description}</p>
                 </Grid>
-                <Grid item xs={12} sm={12} sx={{ height: '12%' }} display={'flex'} justifyContent={'center'} marginTop={-20}>
+                <Grid item xs={12} sm={12} sx={{ height: '12%', zIndex: 100 }} display={'flex'} justifyContent={'center'} marginTop={-20}>
                     <a href={link} target="_blank">
                         <img src={github} alt="GitHub" width={'100%'} height={'100%'}/>
                     </a>
@@ -168,8 +182,9 @@ const ProjectsPanel = () => {
                                 hasHackathon={true} 
                                 hackathons={"Hack to School 2022  MesoHacks 2022"} 
                                 tools={[<img src={python} width={'20%'}/>,<img src={flask} width={'30%'} />]}
-                                description={"a note-sharing web app. best education hack @ mesohacks 2022 and 2nd overall @ hack to school 2022"}
-                                link={'https://github.com/gracetxgao/notable'}/>
+                                description={"A note-sharing web app. Best Education Hack @ MesoHacks 2022 and 2nd overall @ Hack to School 2022"}
+                                link={'https://github.com/gracetxgao/notable'}
+                                image={'/src/assets/notable.png'}/>
                         }
                     </div>
                 </Grid>
@@ -192,8 +207,9 @@ const ProjectsPanel = () => {
                                 hasHackathon={true} 
                                 hackathons={"YouCode 2024"} 
                                 tools={[<img src={react} width={'25%'}/>,<img src={typescript} width={'25%'} />]}
-                                description={"a mobile app promoting well-being by offering rewards and offers for completing wellness tasks"}
-                                link={"https://github.com/gracetxgao/youcode2024"}/>
+                                description={"A mobile app promoting well-being by offering rewards and offers with partnering companies for completing wellness tasks"}
+                                link={"https://github.com/gracetxgao/youcode2024"}
+                                image={'/src/assets/dareventure.png'}/>
                         }
                     </div>
                 </Grid>
@@ -216,8 +232,9 @@ const ProjectsPanel = () => {
                                 hasHackathon={true} 
                                 hackathons={"CPSC 210"} 
                                 tools={[<img src={java} width={'10%'}/>]}
-                                description={"a stock market simulator, built for CPSC 210"}
-                                link={"https://github.students.cs.ubc.ca/CPSC210-2023W-T2/project_a8b8b"}/>
+                                description={"A stock market simulator. Built for CPSC 210 term project."}
+                                link={"https://github.students.cs.ubc.ca/CPSC210-2023W-T2/project_a8b8b"}
+                                image={'/src/assets/stock.png'}/>
                         }
                     </div>
                 </Grid>

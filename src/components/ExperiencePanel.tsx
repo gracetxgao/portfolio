@@ -22,9 +22,9 @@ const TabPanel = (props: TabPanelProps) => {
           <Box>
             <Grid container sx={{ backgroundColor: 'white', borderRadius: '0 0 20px 20px', padding: '2%'}}>
                 <Grid item xs={12} sm={7} paddingInline={'10%'} paddingBlock={4} justifyContent={'space-evenly'} alignItems={'flex-start'}>
-                    <h1>{position}</h1>
+                    <h1 style={{ fontSize: '200%'}}>{position}</h1>
                     <h3>{dates}</h3>
-                    <ul style={{ fontSize: '150%'}}>
+                    <ul style={{ fontSize: '120%'}}>
                         {description.map(point => {
                             return (
                                 <li key={index} dangerouslySetInnerHTML={{ __html: point }} />
@@ -60,7 +60,7 @@ const TabPanel = (props: TabPanelProps) => {
         <TabPanel value={value} index={0} 
             position={"Summer Research Intern"}
             dates={"Jul - Aug 2023"}
-            description={["Worked with the <a href='https://fiveyearplan.triumf.ca/teams-tools/targets-and-ion-sources/index.html#:~:text=TRIUMF's%20Target%20and%20Ion%20Source,more%20intense%2C%20and%20purer%20RIBs.' target='_blank' style='color: black;'>Targets & Ion Sources Development</a> group at ISAC II on the Radioactive Ion Beam Optimizer (RIBO) simulation program", "See the <a href='https://drive.google.com/file/d/1jnJf5IfQ4Fnweu0Bgg-tNGIlGIAKeyFu/view?usp=sharingposter' target='_blank' style='color: black;'>poster</a> my team created and presented, and read more about the work I did on my resume!"]}
+            description={["Worked with the <a href='https://fiveyearplan.triumf.ca/teams-tools/targets-and-ion-sources/index.html' target='_blank' style='color: black;'>Targets & Ion Sources Development</a> group at ISAC II on the Radioactive Ion Beam Optimizer (RIBO) simulation program", "See the <a href='https://drive.google.com/file/d/1jnJf5IfQ4Fnweu0Bgg-tNGIlGIAKeyFu/view?usp=sharingposter' target='_blank' style='color: black;'>poster</a> my team created and presented, and read more about the work I did on my resume!"]}
             image={<img src={triumf} width={'60%'} style={{ borderRadius: '10%'}}/>}>
         </TabPanel>
         <TabPanel value={value} index={1} 
