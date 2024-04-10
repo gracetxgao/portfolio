@@ -5,8 +5,8 @@ const AboutPanel = () => {
         <Box p={10}>
             <h1 style={{ paddingLeft: '30px' }}>About</h1>
             <p style={{ paddingLeft: '30px', fontSize: '150%'}}>
-            Welcome to my personal site (a work in progress)! I'm a student who's passionate about coding, data science, and mathematics. 
-            In my free time, you can find me out playing tennis or reading a good book!
+                I'm a student who's passionate about computer science and mathematics, with interests in web development, data science, and AI. 
+                In my free time, you can find me out playing tennis or reading a good book!
             </p>
         </Box>
     )
