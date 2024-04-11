@@ -199,8 +199,8 @@ const ProjectsPanel = () => {
                                 title={"DareVenture"} 
                                 hasAward={false} 
                                 hasHackathon={true} 
-                                hackathons={"YouCode 2024"} 
-                                tools={[<img src={react} width={'25%'}/>,<img src={typescript} width={'30%'} />]}
+                                hackathons={"youCode 2024"} 
+                                tools={[<img src={typescript} width={'30%'} />, <img src={react} width={'25%'}/>]}
                                 image={dareventure}/>
                         }
                         {isHoveringTwo && 
@@ -208,8 +208,8 @@ const ProjectsPanel = () => {
                                 title={"DareVenture"} 
                                 hasAward={false} 
                                 hasHackathon={true} 
-                                hackathons={"YouCode 2024"} 
-                                tools={[<img src={react} width={'25%'}/>,<img src={typescript} width={'25%'} />]}
+                                hackathons={"youCode 2024"} 
+                                tools={[<img src={typescript} width={'25%'} />,<img src={react} width={'25%'}/>]}
                                 description={"A mobile app promoting well-being by offering rewards and offers with partnering companies for completing wellness tasks"}
                                 link={"https://github.com/gracetxgao/youcode2024"}
                                 image={dareventure}/>

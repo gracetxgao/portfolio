@@ -17,7 +17,7 @@ const App = () => {
 	return (
         <ThemeProvider theme={theme}>
             {/* <NavBar /> */}
-            <Box sx={{ width: '100%', backgroundColor: '#EEF8FF'}}>
+            <Box sx={{ width: '100%', backgroundColor: '#EEF8FF' }}>
                 <Stack spacing={2}>
                     <IntroductionPanel />
                     <ProjectsPanel />
