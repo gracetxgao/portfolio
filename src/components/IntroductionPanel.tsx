@@ -6,9 +6,9 @@ import resume from '../assets/resume.png';
 
 const IntroductionPanel = () => {
     return (
-        <Box>
-            <Grid container direction={'row'} alignItems={'center'} p={10}>
-                <Grid item xs={6} sm={6} p={5} textAlign={'end'}>
+        <Box sx={{ height: '100vh', display: 'flex', alignContent: 'center' }}>
+            <Grid container direction={'row'} alignItems={'center'}>
+                <Grid item xs={6} sm={6} paddingRight={5} textAlign={'end'}>
                     <div>
                         <h1 style={{ fontSize: '400%', marginRight: '5%' }}>Hi, I'm Grace!</h1>
                         <p style={{ fontSize: '200%', marginLeft: '28%', marginRight: '5%' }}>
@@ -26,8 +26,8 @@ const IntroductionPanel = () => {
                         </div>
                     </div>
                 </Grid>
-                <Grid item xs={6} sm={6} p={3}>
-                    <img src={photo} width={'70%'} style={{ borderRadius: '20%', boxShadow: '10px 10px 5px gray'}}/>
+                <Grid item xs={6} sm={6} paddingLeft={3}>
+                    <img src={photo} style={{ height: '50vh', borderRadius: '20%', boxShadow: '10px 10px 5px gray'}}/>
                 </Grid>
             </Grid>
         </Box>

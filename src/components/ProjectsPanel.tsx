@@ -27,13 +27,13 @@ const ProjectCover = (props: ProjectCoverTypes) => {
     <Grid
         container
         sx={{
-            height: '500px',
+            height: '25vw',
+            width: '30vw',
             position: 'relative',
             backgroundImage: `url(${image})`,
             backgroundSize: 'cover',
             backgroundColor: '#B8D4E8',
             borderRadius: '10%',
-            // padding: '10px',
             '&::before': {
                 content: '""',
                 position: 'absolute',
@@ -47,14 +47,14 @@ const ProjectCover = (props: ProjectCoverTypes) => {
             },
         }}
         >
-            <Grid container alignItems="flex-start">
+            <Grid container >
                 {hasAward && (
-                    <Grid item xs={12} sm={3} sx={{ zIndex: 100, paddingBottom: '2%', paddingLeft: '5%', paddingTop: '5%' }}>
-                        <img src={award} style={{ width: '40%', height: 'auto' }} alt="Award" />
+                    <Grid item xs={12} sm={3} sx={{ zIndex: 100, padding: '5%', display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', overflow: 'hidden' }}>
+                        <img src={award} style={{ height: 'auto', width: '100%' }} alt="Award" />
                     </Grid>
                 )}
                 {hasHackathon && (
-                    <Grid item xs={12} sm={hasAward ? 9 : 12} sx={{ zIndex: 100, paddingBottom: '2%', paddingRight: '10%' }}>
+                    <Grid item xs={12} sm={hasAward ? 9 : 12} sx={{ zIndex: 100, display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-start', paddingRight: '5%',}}>
                         <p style={{ fontSize: '200%', textAlign: 'end', whiteSpace: 'pre-wrap' }}>
                             {hackathons}
                         </p>
@@ -64,7 +64,7 @@ const ProjectCover = (props: ProjectCoverTypes) => {
 
             <Grid item xs={12} sm={12} sx={{ zIndex: 100 }} />
 
-            <Grid item xs={6} sm={6} sx={{ zIndex: 100 }} display={'flex'} justifyContent={'flex-start'} alignItems={'center'} paddingLeft={5} fontSize={'120%'}>
+            <Grid item xs={6} sm={6} sx={{ zIndex: 100 }} display={'flex'} justifyContent={'flex-start'} alignItems={'center'} paddingLeft={5} fontSize={'inherit'}>
                 <h1>{title}</h1>
             </Grid>
             <Grid item xs={6} sm={6} sx={{ zIndex: 100 }} display={'flex'} justifyContent={'space-around'} alignItems={'center'} paddingRight={3}>
@@ -92,13 +92,13 @@ const ProjectCard = (props: ProjectCardTypes) => {
             <Grid
                 container
                 sx={{
-                    height: '500px',
+                    height: '25vw',
+                    width: '30vw',
                     position: 'relative',
                     backgroundImage: `url(${image})`,
                     backgroundSize: 'cover',
                     backgroundColor: '#B8D4E8',
                     borderRadius: '10%',
-                    // padding: '10px',
                     '&::before': {
                         content: '""',
                         position: 'absolute',
@@ -113,11 +113,11 @@ const ProjectCard = (props: ProjectCardTypes) => {
                 }}
                 >
                 <Grid item xs={12} sm={12} textAlign={'center'} fontSize={'200%'} sx={{ height: '10%', zIndex: 100 }}>
-                    <h1>{title}</h1>
+                    <h2>{title}</h2>
                 </Grid>
                 {hasHackathon &&
                     <Grid item xs={6} sm={6} display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ height: '20%', zIndex: 100 }} marginTop={10} paddingInline={5}>
-                        <p style={{ fontSize: '150%', whiteSpace: 'pre-wrap', textAlign: 'center'}}>
+                        <p style={{ fontSize: 'inherit', whiteSpace: 'pre-wrap', textAlign: 'center'}}>
                             {hackathons}
                         </p>
                     </Grid>
@@ -126,11 +126,11 @@ const ProjectCard = (props: ProjectCardTypes) => {
                     {tools.map(tool => tool)}
                 </Grid>
                 <Grid item xs={12} sm={12} sx={{ height: '60%', zIndex: 100 }} display={'flex'} justifyContent={'center'} alignItems={'flex-start'} paddingTop={1} paddingInline={'20%'}>
-                    <p style={{ fontSize: '130%', textAlign: 'center'}}>{description}</p>
+                    <p style={{ textAlign: 'center'}}>{description}</p>
                 </Grid>
-                <Grid item xs={12} sm={12} sx={{ height: '12%', zIndex: 100 }} display={'flex'} justifyContent={'center'} marginTop={-20}>
+                <Grid item xs={12} sm={12} sx={{ height: '12%', zIndex: 100 }} display={'flex'} justifyContent={'center'} marginTop={-15}>
                     <a href={link} target="_blank">
-                        <img src={github} alt="GitHub" width={'100%'} height={'100%'}/>
+                        <img src={github} alt="GitHub" width={'50vw'} height={'auto'}/>
                     </a>
                 </Grid>
             </Grid>
@@ -163,12 +163,12 @@ const ProjectsPanel = () => {
     }
 
     return (
-        <Box p={10} >
+        <Box paddingInline={10}>
             <h1 style={{ paddingLeft: '30px' }}>Projects</h1>
             <Grid container>
                 <Grid item xs={6} sm={6}>
                     <div onMouseOver={handleMouseOverOne} onMouseOut={handleMouseOutOne}
-                        style={{ marginBlock: '10%', marginInlineEnd: '5%', paddingLeft: '30px' }}>
+                        style={{ marginBlock: '5%', marginInlineEnd: '5%', paddingLeft: '30px' }}>
                         {!isHoveringOne && 
                             <ProjectCover 
                                 title={"Notable"} 
@@ -193,7 +193,7 @@ const ProjectsPanel = () => {
                 </Grid>
                 <Grid item xs={6} sm={6}>
                     <div onMouseOver={handleMouseOverTwo} onMouseOut={handleMouseOutTwo}
-                        style={{ marginBlock: '10%', marginInlineStart: '5%', paddingRight: '30px' }}>
+                        style={{ marginBlock: '5%', marginInlineStart: '5%', paddingRight: '30px' }}>
                         {!isHoveringTwo && 
                             <ProjectCover 
                                 title={"DareVenture"} 
@@ -218,7 +218,7 @@ const ProjectsPanel = () => {
                 </Grid>
                 <Grid item xs={6} sm={6}>
                     <div onMouseOver={handleMouseOverThree} onMouseOut={handleMouseOutThree}
-                        style={{ marginBlock: '10%', marginInlineStart: '5%', paddingRight: '30px' }}>
+                        style={{ marginBlock: '5%', marginInlineStart: '5%', paddingRight: '30px' }}>
                         {!isHoveringThree && 
                             <ProjectCover 
                                 title={"Stock Master"} 
@@ -234,7 +234,7 @@ const ProjectsPanel = () => {
                                 hasAward={false} 
                                 hasHackathon={true} 
                                 hackathons={"CPSC 210"} 
-                                tools={[<img src={java} width={'10%'}/>]}
+                                tools={[<img src={java} width={'20%'}/>]}
                                 description={"A stock market simulator with data visualization components. Built for my CPSC 210 term project."}
                                 link={"https://github.students.cs.ubc.ca/CPSC210-2023W-T2/project_a8b8b"}
                                 image={stock}/>

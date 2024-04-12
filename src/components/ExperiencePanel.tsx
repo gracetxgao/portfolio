@@ -19,7 +19,7 @@ const TabPanel = (props: TabPanelProps) => {
     return (
       <div hidden={value !== index} id={`simple-tabpanel-${index}`}>
         {value === index && (
-          <Box>
+          <Box >
             <Grid container sx={{ backgroundColor: 'white', borderRadius: '0 0 20px 20px', padding: '2%'}}>
                 <Grid item xs={12} sm={7} paddingInline={'10%'} paddingBlock={4} justifyContent={'space-evenly'} alignItems={'flex-start'}>
                     <h1 style={{ fontSize: '200%'}}>{position}</h1>
@@ -52,7 +52,7 @@ const TabPanel = (props: TabPanelProps) => {
     };
   
     return (
-      <Box >
+      <Box sx={{ paddingLeft: '30px' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider', backgroundColor: '#B8D4E8', borderRadius: '20px 20px 0px 0px'}}>
           <Tabs value={value} onChange={handleChange}>
             <Tab label="TRIUMF" />
@@ -68,7 +68,7 @@ const TabPanel = (props: TabPanelProps) => {
         <TabPanel value={value} index={1} 
             position={"Software Developer"}
             dates={"Sep 2023 - Apr 2024"}
-            description={["Collaborated with a team of seven to develop EpiLog, a seizure-tracking mobile application for epilepsy patients", "Used React Native and Firebase for the first time!"]}
+            description={["Collaborated with a team of seven at <a href='https://www.ubclaunchpad.com' target='_blank' style='color: black;'>UBC Launch Pad</a> to develop EpiLog, a seizure-tracking mobile application for epilepsy patients", "Used React Native and Firebase for the first time!"]}
             image={<img src={launchpad} width={'60%'} style={{ borderRadius: '10%'}}/>}>
         </TabPanel>
       </Box>
@@ -77,8 +77,8 @@ const TabPanel = (props: TabPanelProps) => {
 
 const ExperiencePanel = () => {
     return (
-        <Box p={10}>
-            <h1>Experience</h1>
+        <Box paddingInline={10}>
+            <h1 style={{ paddingLeft: '30px' }}>Experience</h1>
             <ExperienceTabs/>
         </Box>
     )

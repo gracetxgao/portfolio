@@ -9,6 +9,7 @@ interface SkillProps {
     tool: String;
     logo: JSX.Element;
 }
+
 const Skill = (props: SkillProps) => {
     const { logo } = props
     const [isHovering, setIsHovering] = useState(false)
@@ -21,30 +22,33 @@ const Skill = (props: SkillProps) => {
     }
 
     return (
-        <Grid item xs={3} sm={3} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            {!isHovering && 
-                <Stack display={'flex'} justifyContent={'space-around'} alignItems={'center'} 
-                        borderRadius={'10%'} boxShadow={'10px 10px 5px black'} 
-                        m={3} bgcolor={'white'} height={'120%'}>
-                    {logo}
-                    {/* <h3>{tool}</h3> */}
-                </Stack>
-            }
-            {isHovering && 
-                <Stack display={'flex'} justifyContent={'space-around'} alignItems={'center'} 
-                        borderRadius={'10%'} boxShadow={'10px 10px 5px black'} m={3} 
-                        style={{ scale: '110%'}} bgcolor={'white'} height={'120%'}>
-                    {logo}
-                    {/* <h3>{tool}</h3> */}
-                </Stack>
-            }
-        </Grid>
+        <Grid item xs={3} sm={3} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} 
+            sx={{ 
+                marginBottom: 2,
+                padding: 1, 
+                display: 'flex', 
+                justifyContent: 'center', 
+                alignItems: 'center',
+                height: '15vw', 
+                maxWidth: '100%',
+            }}>
+        <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} 
+                borderRadius={'10%'} boxShadow={'10px 10px 5px black'} 
+                m={3} bgcolor={'white'} height={'100%'} width={'100%'}
+                sx={{
+                    transition: 'transform 0.3s',
+                    transform: isHovering ? 'scale(1.1)' : 'scale(1)',
+                    aspectRatio: '1 / 1' 
+                }}>
+            {logo}
+        </Stack>
+    </Grid>
     )
 }
 
 const SkillsPanel = () => {
     return (
-        <Box p={10}>
+        <Box paddingInline={10}>
             <h1 style={{ paddingLeft: '30px' }}>Skills</h1>
             <Grid container>
                 <Skill tool={"Python"} logo={<img src={python} width={'45%'}/>}/>

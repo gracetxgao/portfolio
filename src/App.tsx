@@ -6,6 +6,7 @@ import ProjectsPanel from './components/ProjectsPanel';
 import ExperiencePanel from './components/ExperiencePanel';
 import SkillsPanel from './components/SkillsPanel';
 import AboutPanel from './components/AboutPanel';
+import Footer from './components/Footer';
 
 const theme = createTheme({
     typography: {
@@ -17,13 +18,14 @@ const App = () => {
 	return (
         <ThemeProvider theme={theme}>
             {/* <NavBar /> */}
-            <Box sx={{ width: '100%', backgroundColor: '#EEF8FF' }}>
+            <Box sx={{ width: '80%', backgroundColor: '#EEF8FF', paddingInline: '10%' }}>
                 <Stack spacing={2}>
                     <IntroductionPanel />
+                    <AboutPanel />
                     <ProjectsPanel />
                     <ExperiencePanel />
                     <SkillsPanel />
-                    <AboutPanel />
+                    <Footer />
                 </Stack>
             </Box>
         </ThemeProvider>
