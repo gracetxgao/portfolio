@@ -20,7 +20,7 @@ const IntroductionPanel = () => {
                             <a href="https://www.linkedin.com/in/gracetxgao/" target="_blank">
                                 <img src={linkedin} width={'8%'} style={{ paddingRight: '5%'}}/>
                             </a>
-                            <a href="https://drive.google.com/file/d/1zFvdwJTRtwMAWenlOFJa1Q-Bu0xb_rq7/view?usp=sharing" target="_blank">
+                            <a href="https://drive.google.com/file/d/1o9QaWWSrlI9jDLVdJhqlMe-W2ZJEtrpk/view?usp=sharing" target="_blank">
                                 <img src={resume} width={'8%'}/>
                             </a>
                         </div>
