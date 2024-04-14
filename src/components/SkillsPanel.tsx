@@ -4,6 +4,12 @@ import python from '../assets/python.png';
 import typescript from '../assets/typescript.png';
 import react from '../assets/react.png';
 import java from '../assets/java.png';
+import html from '../assets/html.png';
+import css from '../assets/css.png';
+import figma from '../assets/figma.png';
+import mongo from '../assets/mongo.png';
+import node from '../assets/node.png';
+import javascript from '../assets/javascript.png';
 
 interface SkillProps {
     tool: String;
@@ -52,9 +58,13 @@ const SkillsPanel = () => {
             <h1 style={{ paddingLeft: '30px' }}>Skills</h1>
             <Grid container>
                 <Skill tool={"Python"} logo={<img src={python} width={'45%'}/>}/>
-                <Skill tool={"TypeScript"} logo={<img src={typescript} width={'50%'}/>}/>
-                <Skill tool={"React"} logo={<img src={react} width={'50%'}/>}/>
                 <Skill tool={"Java"} logo={<img src={java} width={'40%'}/>}/>
+                <Skill tool={"React"} logo={<img src={react} width={'50%'}/>}/>
+                <Skill tool={"TypeScript"} logo={<img src={typescript} width={'50%'}/>}/>
+                <Skill tool={"JavaScript"} logo={<img src={javascript} width={'50%'}/>}/>
+                <Skill tool={"HTML"} logo={<img src={html} width={'45%'}/>}/>
+                <Skill tool={"CSS"} logo={<img src={css} width={'45%'}/>}/>
+                <Skill tool={"Figma"} logo={<img src={figma} width={'35%'}/>}/>
             </Grid>
         </Box>
     )

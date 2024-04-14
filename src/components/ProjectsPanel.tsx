@@ -218,7 +218,7 @@ const ProjectsPanel = () => {
                 </Grid>
                 <Grid item xs={6} sm={6}>
                     <div onMouseOver={handleMouseOverThree} onMouseOut={handleMouseOutThree}
-                        style={{ marginBlock: '5%', marginInlineStart: '5%', paddingRight: '30px' }}>
+                        style={{ marginBlock: '5%', marginInlineEnd: '5%', paddingLeft: '30px' }}>
                         {!isHoveringThree && 
                             <ProjectCover 
                                 title={"Stock Master"} 
