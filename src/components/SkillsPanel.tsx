@@ -7,8 +7,8 @@ import java from '../assets/java.png';
 import html from '../assets/html.png';
 import css from '../assets/css.png';
 import figma from '../assets/figma.png';
-import mongo from '../assets/mongo.png';
-import node from '../assets/node.png';
+// import mongo from '../assets/mongo.png';
+// import node from '../assets/node.png';
 import javascript from '../assets/javascript.png';
 
 interface SkillProps {

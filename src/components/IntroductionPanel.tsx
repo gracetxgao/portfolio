@@ -6,13 +6,18 @@ import resume from '../assets/resume.png';
 
 const IntroductionPanel = () => {
     return (
-        <Box sx={{ height: '100vh', display: 'flex', alignContent: 'center' }}>
-            <Grid container direction={'row'} alignItems={'center'}>
-                <Grid item xs={6} sm={6} paddingRight={5} textAlign={'end'}>
+        <Box sx={{ height: '100vh', display: 'flex', alignContent: 'center', justifyItems: {sm: 'center'} }}>
+            <Grid container sx={{ direction: 'row', alignItems: 'center', justifyItems: 'center' }}>
+                <Grid item md={12} lg={6} 
+                    sx={{ 
+                        paddingRight: {sm: 0, lg: 5}, 
+                        textAlign: {sm: 'center', lg: 'end'},
+
+                    }}>
                     <div>
-                        <h1 style={{ fontSize: '400%', marginRight: '5%' }}>Hi, I'm Grace!</h1>
-                        <p style={{ fontSize: '200%', marginLeft: '28%', marginRight: '5%' }}>
-                            <a href='https://www.tricitynews.com/local-news/port-moody-grad-receives-100k-scholarship-for-science-studies-7203967' target="_blank" style={{ color: 'black' }}>2023 Schulich Leader Scholar</a> and Computer Science + Math student @ UBC</p>
+                        <h1 style={{ fontSize: '400%'}}>Hi, I'm Grace!</h1>
+                        <p style={{ fontSize: '200%' }}>
+                            <a href='https://schulichleaders.com/scholars/grace-gao/' target="_blank" style={{ color: 'black' }}>2023 Schulich Leader Scholar</a> and Computer Science + Math student @ UBC</p>
                         <div style={{ marginRight: '5%' }}>
                             <a href="https://github.com/gracetxgao" target="_blank">
                                 <img src={github} width={'8%'} style={{ paddingRight: '5%'}}/>
@@ -26,7 +31,7 @@ const IntroductionPanel = () => {
                         </div>
                     </div>
                 </Grid>
-                <Grid item xs={6} sm={6} paddingLeft={3}>
+                <Grid item md={12} lg={6} sx={{ paddingLeft: {lg: 3}, alignItems: {lg: 'flex-start'}}}>
                     <img src={photo} style={{ height: '50vh', borderRadius: '20%', boxShadow: '10px 10px 5px gray'}}/>
                 </Grid>
             </Grid>
