@@ -1,8 +1,6 @@
 import { Grid, Box } from '@mui/material';
-import award from '../assets/award.png';
 import python from '../assets/python.png';
 import flask from '../assets/flask.png';
-import github from '../assets/github.png';
 import react from '../assets/react.png';
 import typescript from '../assets/typescript.png';
 import java from '../assets/java.png';
@@ -10,156 +8,27 @@ import { useState } from 'react';
 import notable from '../assets/notable.png';
 import dareventure from '../assets/dareventure.png';
 import stock from '../assets/stock.png';
-
-interface ProjectCoverTypes {
-    title: String;
-    hasAward: Boolean;
-    hasHackathon: Boolean;
-    hackathons?: String;
-    tools: Array<any>;
-    image: String;
-}
-
-const ProjectCover = (props: ProjectCoverTypes) => {
-    const { title, hasAward, hasHackathon, hackathons, tools, image } = props
-    
-    return (
-    <Grid
-        container
-        sx={{
-            height: '25vw',
-            width: '30vw',
-            position: 'relative',
-            backgroundImage: `url(${image})`,
-            backgroundSize: 'cover',
-            backgroundColor: '#B8D4E8',
-            borderRadius: '10%',
-            '&::before': {
-                content: '""',
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                backgroundColor: 'rgba(184, 212, 232, 0.8)',
-                borderRadius: '10%',
-                padding: '10px',
-            },
-        }}
-        >
-            <Grid container >
-                {hasAward && (
-                    <Grid item xs={12} sm={3} sx={{ zIndex: 100, padding: '5%', display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', overflow: 'hidden' }}>
-                        <img src={award} style={{ height: 'auto', width: '100%' }} alt="Award" />
-                    </Grid>
-                )}
-                {hasHackathon && (
-                    <Grid item xs={12} sm={hasAward ? 9 : 12} sx={{ zIndex: 100, display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-start', paddingRight: '5%',}}>
-                        <p style={{ fontSize: '200%', textAlign: 'end', whiteSpace: 'pre-wrap' }}>
-                            {hackathons}
-                        </p>
-                    </Grid>
-                )}
-            </Grid>
-
-            <Grid item xs={12} sm={12} sx={{ zIndex: 100 }} />
-
-            <Grid item xs={6} sm={6} sx={{ zIndex: 100 }} display={'flex'} justifyContent={'flex-start'} alignItems={'center'} paddingLeft={5} fontSize={'inherit'}>
-                <h1>{title}</h1>
-            </Grid>
-            <Grid item xs={6} sm={6} sx={{ zIndex: 100 }} display={'flex'} justifyContent={'space-around'} alignItems={'center'} paddingRight={3}>
-                {tools.map(tool => tool)}
-            </Grid>
-        </Grid>
-    )
-}
-
-interface ProjectCardTypes {
-    title: String;
-    hasAward: Boolean;
-    hackathons?: String;
-    hasHackathon: Boolean;
-    tools: Array<any>;
-    description: String;
-    link: string;
-    image: String;
-}
-
-const ProjectCard = (props: ProjectCardTypes) => {
-    const { title, hackathons, hasHackathon, tools, description, link, image } = props
-    return (
-        <>
-            <Grid
-                container
-                sx={{
-                    height: '25vw',
-                    width: '30vw',
-                    position: 'relative',
-                    backgroundImage: `url(${image})`,
-                    backgroundSize: 'cover',
-                    backgroundColor: '#B8D4E8',
-                    borderRadius: '10%',
-                    '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: 'rgba(184, 212, 232, 0.8)',
-                        borderRadius: '10%',
-                        padding: '10px',
-                    },
-                }}
-                >
-                <Grid item xs={12} sm={12} textAlign={'center'} fontSize={'200%'} sx={{ height: '10%', zIndex: 100 }}>
-                    <h2>{title}</h2>
-                </Grid>
-                {hasHackathon &&
-                    <Grid item xs={6} sm={6} display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ height: '20%', zIndex: 100 }} marginTop={10} paddingInline={5}>
-                        <p style={{ fontSize: 'inherit', whiteSpace: 'pre-wrap', textAlign: 'center'}}>
-                            {hackathons}
-                        </p>
-                    </Grid>
-                }
-                <Grid item xs={hasHackathon ? 6 : 12} sm={hasHackathon ? 6 : 12} sx={{ height: '20%', zIndex: 100 }} display={'flex'} justifyContent={'space-evenly'} alignItems={'center'} marginTop={10}>
-                    {tools.map(tool => tool)}
-                </Grid>
-                <Grid item xs={12} sm={12} sx={{ height: '60%', zIndex: 100 }} display={'flex'} justifyContent={'center'} alignItems={'flex-start'} paddingTop={1} paddingInline={'20%'}>
-                    <p style={{ textAlign: 'center'}}>{description}</p>
-                </Grid>
-                <Grid item xs={12} sm={12} sx={{ height: '12%', zIndex: 100 }} display={'flex'} justifyContent={'center'} marginTop={-15}>
-                    <a href={link} target="_blank">
-                        <img src={github} alt="GitHub" width={'50vw'} height={'auto'}/>
-                    </a>
-                </Grid>
-            </Grid>
-        </>
-    )
-}
+import ProjectCard from './ProjectCard';
+import ProjectCover from './ProjectCover';
+import endanger from '../assets/endanger.jpg';
 
 const ProjectsPanel = () => {
-    const [isHoveringOne, setIsHoveringOne] = useState(false)
-    const [isHoveringTwo, setIsHoveringTwo] = useState(false)
-    const [isHoveringThree, setIsHoveringThree] = useState(false)
+    const [hovering, setHovering] = useState([false, false, false, false])
 
-    const handleMouseOverOne = () => {
-        setIsHoveringOne(true)
+    const handleMouseOver = (i: number) => {
+        setHovering(prev => {
+            const newHovering = [...prev]
+            newHovering[i] = true
+            return newHovering
+        })
     }
-    const handleMouseOutOne = () => {
-        setIsHoveringOne(false)
-    }
-    const handleMouseOverTwo = () => {
-        setIsHoveringTwo(true)
-    }
-    const handleMouseOutTwo = () => {
-        setIsHoveringTwo(false)
-    }
-    const handleMouseOverThree = () => {
-        setIsHoveringThree(true)
-    }
-    const handleMouseOutThree = () => {
-        setIsHoveringThree(false)
+
+    const handleMouseOut = (i: number) => {
+        setHovering(prev => {
+            const newHovering = [...prev]
+            newHovering[i] = false
+            return newHovering
+        })
     }
 
     return (
@@ -167,9 +36,33 @@ const ProjectsPanel = () => {
             <h1 style={{ paddingLeft: '30px' }}>Projects</h1>
             <Grid container>
                 <Grid item xs={6} sm={6}>
-                    <div onMouseOver={handleMouseOverOne} onMouseOut={handleMouseOutOne}
+                    <div onMouseOver={() => {handleMouseOver(0)}} onMouseOut={() => {handleMouseOut(0)}}
+                            style={{ marginBlock: '5%', marginInlineEnd: '5%', paddingLeft: '30px' }}>
+                            {!hovering[0] ? 
+                                <ProjectCover 
+                                    title={"Stranger Endanger"} 
+                                    hasAward={true} 
+                                    hasHackathon={true} 
+                                    hackathons={"StormHacks 2024"} 
+                                    tools={[<img src={typescript} width={'30%'}/>,<img src={react} width={'40%'} />]}
+                                    image={endanger}/>
+                                :
+                                <ProjectCard                            
+                                    title={"Stranger Endanger"} 
+                                    hasAward={true} 
+                                    hasHackathon={true} 
+                                    hackathons={"StormHacks 2024"} 
+                                    tools={[<img src={typescript} width={'20%'}/>,<img src={react} width={'30%'} />]}
+                                    description={"A web app built to raise awareness for endangered species. Best Frontend Design @ StormHacks 2024 out of 70+ projects"}
+                                    link={'https://github.com/gracetxgao/stranger-endanger'}
+                                    image={endanger}/>
+                            }
+                        </div>
+                </Grid>
+                <Grid item xs={6} sm={6}>
+                    <div onMouseOver={() => {handleMouseOver(1)}} onMouseOut={() => {handleMouseOut(1)}}
                         style={{ marginBlock: '5%', marginInlineEnd: '5%', paddingLeft: '30px' }}>
-                        {!isHoveringOne && 
+                        {!hovering[1] ? 
                             <ProjectCover 
                                 title={"Notable"} 
                                 hasAward={true} 
@@ -177,8 +70,7 @@ const ProjectsPanel = () => {
                                 hackathons={"Hack to School 2022\nMesoHacks 2022"} 
                                 tools={[<img src={python} width={'30%'}/>,<img src={flask} width={'40%'} />]}
                                 image={notable}/>
-                        }
-                        {isHoveringOne && 
+                            :
                             <ProjectCard                            
                                 title={"Notable"} 
                                 hasAward={true} 
@@ -192,9 +84,9 @@ const ProjectsPanel = () => {
                     </div>
                 </Grid>
                 <Grid item xs={6} sm={6}>
-                    <div onMouseOver={handleMouseOverTwo} onMouseOut={handleMouseOutTwo}
+                    <div onMouseOver={() => {handleMouseOver(2)}} onMouseOut={() => {handleMouseOut(2)}}
                         style={{ marginBlock: '5%', marginInlineStart: '5%', paddingRight: '30px' }}>
-                        {!isHoveringTwo && 
+                        {!hovering[2] ? 
                             <ProjectCover 
                                 title={"DareVenture"} 
                                 hasAward={false} 
@@ -202,8 +94,7 @@ const ProjectsPanel = () => {
                                 hackathons={"youCode 2024"} 
                                 tools={[<img src={typescript} width={'30%'} />, <img src={react} width={'25%'}/>]}
                                 image={dareventure}/>
-                        }
-                        {isHoveringTwo && 
+                        :
                             <ProjectCard                            
                                 title={"DareVenture"} 
                                 hasAward={false} 
@@ -217,9 +108,9 @@ const ProjectsPanel = () => {
                     </div>
                 </Grid>
                 <Grid item xs={6} sm={6}>
-                    <div onMouseOver={handleMouseOverThree} onMouseOut={handleMouseOutThree}
-                        style={{ marginBlock: '5%', marginInlineEnd: '5%', paddingLeft: '30px' }}>
-                        {!isHoveringThree && 
+                    <div onMouseOver={() => {handleMouseOver(3)}} onMouseOut={() => {handleMouseOut(3)}}
+                        style={{ marginBlock: '5%', marginInlineStart: '5%', paddingRight: '30px' }}>
+                        {!hovering[3] ?
                             <ProjectCover 
                                 title={"Stock Master"} 
                                 hasAward={false} 
@@ -227,8 +118,7 @@ const ProjectsPanel = () => {
                                 hackathons={"CPSC 210"} 
                                 tools={[<img src={java} width={'30%'}/>]}
                                 image={stock}/>
-                        }
-                        {isHoveringThree && 
+                        :
                             <ProjectCard                            
                                 title={"Stock Master"} 
                                 hasAward={false} 

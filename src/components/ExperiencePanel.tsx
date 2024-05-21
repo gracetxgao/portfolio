@@ -25,9 +25,9 @@ const TabPanel = (props: TabPanelProps) => {
                     <h1 style={{ fontSize: '200%'}}>{position}</h1>
                     <h3>{dates}</h3>
                     <ul style={{ fontSize: '120%'}}>
-                        {description.map(point => {
+                        {description.map((point, i) => {
                             return (
-                                <li key={index} dangerouslySetInnerHTML={{ __html: point }} />
+                                <li key={i} dangerouslySetInnerHTML={{ __html: point }} />
                             )
                         })}
                     </ul>
@@ -59,13 +59,13 @@ const TabPanel = (props: TabPanelProps) => {
             <Tab label="UBC Launch Pad" />
           </Tabs>
         </Box>
-        <TabPanel value={value} index={0} 
+        <TabPanel value={value} index={0}
             position={"Summer Research Intern"}
             dates={"Jul - Aug 2023"}
             description={["Worked with the <a href='https://fiveyearplan.triumf.ca/teams-tools/targets-and-ion-sources/index.html' target='_blank' style='color: black;'>Targets & Ion Sources Development</a> group at ISAC II on the Radioactive Ion Beam Optimizer (RIBO) simulation program", "See the <a href='https://drive.google.com/file/d/1jnJf5IfQ4Fnweu0Bgg-tNGIlGIAKeyFu/view?usp=sharingposter' target='_blank' style='color: black;'>poster</a> my team created and presented, and read more about the work I did on my resume!"]}
             image={<img src={triumf} width={'60%'} style={{ borderRadius: '10%'}}/>}>
         </TabPanel>
-        <TabPanel value={value} index={1} 
+        <TabPanel value={value} index={1}
             position={"Software Developer"}
             dates={"Sep 2023 - Apr 2024"}
             description={["Collaborated with a team of seven at <a href='https://www.ubclaunchpad.com' target='_blank' style='color: black;'>UBC Launch Pad</a> to develop EpiLog, a seizure-tracking mobile application for epilepsy patients", "Used React Native and Firebase for the first time!"]}

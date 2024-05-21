@@ -9,49 +9,69 @@ import AboutPanel from './components/AboutPanel';
 import Footer from './components/Footer';
 import { useState } from 'react';
 import { AppBar, Button, Container, Grid, Toolbar, Typography } from '@mui/material';
-import sun from '../src/assets/sun.png'
+import sun from '../src/assets/sun.png';
 import moon from '../src/assets/moon.png';
 
-const App = () => {
+const lightTheme = createTheme({
+    palette: {
+        primary: {
+            main: '#EEF8FF',
+            light: '#000000',
+            dark: '#B8D4E8'
+        },
+        secondary: {
+            main: '#1C2231'
+        }
+    },
+    typography: {
+        fontFamily: ['Lato', 'sans-serif'].join(','),
+    },
+});
 
-    const [darkMode, setDarkMode] = useState(true);
+const darkTheme = createTheme({
+    palette: {
+        primary: {
+            main: '#1C2231',
+            light: '#FFFFFF',
+            dark: '#12161F'
+        },
+        secondary: {
+            main: '#EEF8FF'
+        }
+    },
+    typography: {
+        fontFamily: ['Lato', 'sans-serif'].join(','),
+    },
+});
+
+const App = () => {
+    const [useTheme, setUseTheme] = useState(lightTheme);
 
     const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
+        setUseTheme((prevTheme) => (prevTheme === lightTheme ? darkTheme : lightTheme));
     };
 
-    const theme = createTheme({
-        palette: {
-            primary: {
-                main: darkMode ? '#EEF8FF' : '#1C2231',
-            },
-        },
-        typography: {
-            fontFamily: ['Lato', 'sans-serif'].join(','),
-          },
-    });
-
-	return (
-        <ThemeProvider theme={theme}>
-            <AppBar sx={{ backgroundColor: theme.palette.primary.main, height: '5vh' }} position='fixed'>
-                <Container maxWidth="xl">
+    return (
+        <ThemeProvider theme={useTheme}>
+            <AppBar sx={{ backgroundColor: useTheme.palette.primary.main, height: '8vh' }} position='fixed'>
+                <Container maxWidth={false}>
                     <Toolbar disableGutters>
-                        <Grid container justifyContent="space-between" alignItems="center">
+                        <Grid container justifyContent="space-between" alignItems="center" p={2}>
                             <Grid item>
-                                <Typography variant="h6">grace</Typography>
+                                <Typography variant="h6">Grace Gao</Typography>
                             </Grid>
                             <Grid item>
                                 <Button color="inherit" onClick={toggleDarkMode}>
-                                    <img src={darkMode ? moon : sun} style={{ height: '3vh' }}/>
+                                    <img src={(useTheme === lightTheme) ? moon : sun} style={{ height: '3vh' }} />
                                 </Button>
                             </Grid>
                         </Grid>
                     </Toolbar>
                 </Container>
             </AppBar>
-            <Box sx={{ width: '80%', backgroundColor: theme.palette.primary.main, paddingInline: '10%' }}>
+            <Box sx={{ width: '80%', backgroundColor: useTheme.palette.primary.main, paddingInline: '10%' }}>
                 <Stack spacing={2}>
-                    <IntroductionPanel />
+                    <IntroductionPanel textColor={useTheme.palette.primary.light}/>
                     <AboutPanel />
                     <ProjectsPanel />
                     <ExperiencePanel />
@@ -60,7 +80,9 @@ const App = () => {
                 </Stack>
             </Box>
         </ThemeProvider>
-    )
+    );
 }
 
-export default App
+export default App;
+
+

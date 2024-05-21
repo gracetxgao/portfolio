@@ -4,7 +4,12 @@ import github from '../assets/github.png';
 import linkedin from '../assets/linkedin.png';
 import resume from '../assets/resume.png';
 
-const IntroductionPanel = () => {
+interface IntroductionPanelTypes {
+    textColor: string;
+}
+const IntroductionPanel = (props: IntroductionPanelTypes) => {
+    const { textColor } = props
+
     return (
         <Box sx={{ height: '100vh', display: 'flex', alignContent: 'center', justifyItems: {sm: 'center'} }}>
             <Grid container sx={{ direction: 'row', alignItems: 'center', justifyItems: 'center' }}>
@@ -12,12 +17,12 @@ const IntroductionPanel = () => {
                     sx={{ 
                         paddingRight: {sm: 0, lg: 5}, 
                         textAlign: {sm: 'center', lg: 'end'},
-
+                        color: textColor
                     }}>
                     <div>
                         <h1 style={{ fontSize: '400%'}}>Hi, I'm Grace!</h1>
-                        <p style={{ fontSize: '200%' }}>
-                            <a href='https://schulichleaders.com/scholars/grace-gao/' target="_blank" style={{ color: 'black' }}>2023 Schulich Leader Scholar</a> and Computer Science + Math student @ UBC</p>
+                        <p style={{ fontSize: '200%', color: 'inherit' }}>
+                            <a href='https://schulichleaders.com/scholars/grace-gao/' target="_blank" style={{ color: 'inherit' }}>2023 Schulich Leader Scholar</a> and Computer Science + Math student @ UBC</p>
                         <div style={{ marginRight: '5%' }}>
                             <a href="https://github.com/gracetxgao" target="_blank">
                                 <img src={github} width={'8%'} style={{ paddingRight: '5%'}}/>
