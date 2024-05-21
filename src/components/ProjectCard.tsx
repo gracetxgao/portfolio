@@ -50,7 +50,11 @@ const ProjectCard = (props: ProjectCardTypes) => {
                     </Grid>
                 }
                 <Grid item xs={hasHackathon ? 6 : 12} sm={hasHackathon ? 6 : 12} sx={{ height: '20%', zIndex: 100 }} display={'flex'} justifyContent={'space-evenly'} alignItems={'center'} marginTop={10}>
-                    {tools.map(tool => tool)}
+                    {tools.map((tool, idx) => (
+                        <div key={idx}>
+                            {tool}
+                        </div>
+                    ))}
                 </Grid>
                 <Grid item xs={12} sm={12} sx={{ height: '60%', zIndex: 100 }} display={'flex'} justifyContent={'center'} alignItems={'flex-start'} paddingInline={'15%'}>
                     <p style={{ textAlign: 'center' }}>{description}</p>
