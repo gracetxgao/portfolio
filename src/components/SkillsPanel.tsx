@@ -14,10 +14,12 @@ import javascript from '../assets/javascript.png';
 interface SkillProps {
     tool: String;
     logo: JSX.Element;
+    backgroundColor: string
+    shadowColor: string
 }
 
 const Skill = (props: SkillProps) => {
-    const { logo } = props
+    const { logo, backgroundColor, shadowColor } = props
     const [isHovering, setIsHovering] = useState(false)
 
     const handleMouseOver = () => {
@@ -39,8 +41,8 @@ const Skill = (props: SkillProps) => {
                 maxWidth: '100%',
             }}>
         <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} 
-                borderRadius={'10%'} boxShadow={'10px 10px 5px black'} 
-                m={3} bgcolor={'white'} height={'100%'} width={'100%'}
+                borderRadius={'10%'} boxShadow={`10px 10px 5px ${shadowColor}`} 
+                m={3} bgcolor={backgroundColor} height={'100%'} width={'100%'}
                 sx={{
                     transition: 'transform 0.3s',
                     transform: isHovering ? 'scale(1.1)' : 'scale(1)',
@@ -52,19 +54,26 @@ const Skill = (props: SkillProps) => {
     )
 }
 
-const SkillsPanel = () => {
+interface SkillPanelProps {
+    backgroundColor: string
+    shadowColor: string
+}
+
+const SkillsPanel = (props: SkillPanelProps) => {
+    const { backgroundColor, shadowColor } = props
+
     return (
         <Box paddingInline={10}>
             <h1 style={{ paddingLeft: '30px' }}>Skills</h1>
             <Grid container>
-                <Skill tool={"Python"} logo={<img src={python} width={'45%'}/>}/>
-                <Skill tool={"Java"} logo={<img src={java} width={'40%'}/>}/>
-                <Skill tool={"React"} logo={<img src={react} width={'50%'}/>}/>
-                <Skill tool={"TypeScript"} logo={<img src={typescript} width={'50%'}/>}/>
-                <Skill tool={"JavaScript"} logo={<img src={javascript} width={'50%'}/>}/>
-                <Skill tool={"HTML"} logo={<img src={html} width={'45%'}/>}/>
-                <Skill tool={"CSS"} logo={<img src={css} width={'45%'}/>}/>
-                <Skill tool={"Figma"} logo={<img src={figma} width={'35%'}/>}/>
+                <Skill tool={"Python"} logo={<img src={python} width={'45%'}/>} backgroundColor={backgroundColor} shadowColor={shadowColor}/>
+                <Skill tool={"Java"} logo={<img src={java} width={'40%'}/>} backgroundColor={backgroundColor} shadowColor={shadowColor}/>
+                <Skill tool={"React"} logo={<img src={react} width={'50%'}/>} backgroundColor={backgroundColor} shadowColor={shadowColor}/>
+                <Skill tool={"TypeScript"} logo={<img src={typescript} width={'50%'}/>} backgroundColor={backgroundColor} shadowColor={shadowColor}/>
+                <Skill tool={"JavaScript"} logo={<img src={javascript} width={'50%'}/>} backgroundColor={backgroundColor} shadowColor={shadowColor}/>
+                <Skill tool={"HTML"} logo={<img src={html} width={'45%'}/>} backgroundColor={backgroundColor} shadowColor={shadowColor}/>
+                <Skill tool={"CSS"} logo={<img src={css} width={'45%'}/>} backgroundColor={backgroundColor} shadowColor={shadowColor}/>
+                <Skill tool={"Figma"} logo={<img src={figma} width={'35%'}/>} backgroundColor={backgroundColor} shadowColor={shadowColor}/>
             </Grid>
         </Box>
     )

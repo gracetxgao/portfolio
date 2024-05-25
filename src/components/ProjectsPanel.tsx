@@ -12,7 +12,14 @@ import ProjectCard from './ProjectCard';
 import ProjectCover from './ProjectCover';
 import endanger from '../assets/endanger.jpg';
 
-const ProjectsPanel = () => {
+interface ProjectsPanelTypes {
+    textColor: string;
+    backgroundColor: string;
+}
+
+const ProjectsPanel = (props: ProjectsPanelTypes) => {
+    const { textColor, backgroundColor } = props
+
     const [hovering, setHovering] = useState([false, false, false, false])
 
     const handleMouseOver = (i: number) => {
@@ -33,7 +40,7 @@ const ProjectsPanel = () => {
 
     return (
         <Box paddingInline={10}>
-            <h1 style={{ paddingLeft: '30px' }}>Projects</h1>
+            <h1 style={{ paddingLeft: '30px', color: textColor }}>Projects</h1>
             <Grid container>
                 <Grid item xs={6} sm={6}>
                     <div onMouseOver={() => {handleMouseOver(0)}} onMouseOut={() => {handleMouseOut(0)}}
@@ -45,8 +52,11 @@ const ProjectsPanel = () => {
                                     hasHackathon={true} 
                                     hackathons={"StormHacks 2024"} 
                                     tools={[<img src={typescript} width={'30%'}/>,<img src={react} width={'40%'} />]}
-                                    image={endanger}/>
-                                :
+                                    image={endanger}
+                                    backgroundColor={backgroundColor}
+                                    textColor={textColor}
+                                />
+                            :
                                 <ProjectCard                            
                                     title={"Stranger Endanger"} 
                                     hasAward={true} 
@@ -55,7 +65,10 @@ const ProjectsPanel = () => {
                                     tools={[<img src={typescript} width={'20%'}/>,<img src={react} width={'30%'} />]}
                                     description={"A web app built to raise awareness for endangered species. Best Frontend Design @ StormHacks 2024 out of 70+ projects"}
                                     link={'https://github.com/gracetxgao/stranger-endanger'}
-                                    image={endanger}/>
+                                    image={endanger}
+                                    backgroundColor={backgroundColor}
+                                    textColor={textColor}
+                                />
                             }
                         </div>
                 </Grid>
@@ -69,8 +82,11 @@ const ProjectsPanel = () => {
                                 hasHackathon={true} 
                                 hackathons={"Hack to School 2022\nMesoHacks 2022"} 
                                 tools={[<img src={python} width={'30%'}/>,<img src={flask} width={'40%'} />]}
-                                image={notable}/>
-                            :
+                                image={notable}
+                                backgroundColor={backgroundColor}
+                                textColor={textColor}
+                            />
+                        :
                             <ProjectCard                            
                                 title={"Notable"} 
                                 hasAward={true} 
@@ -79,7 +95,10 @@ const ProjectsPanel = () => {
                                 tools={[<img src={python} width={'20%'}/>,<img src={flask} width={'30%'} />]}
                                 description={"A note-sharing web app. Best Education Hack @ MesoHacks 2022 and 2nd overall @ Hack to School 2022"}
                                 link={'https://github.com/gracetxgao/notable'}
-                                image={notable}/>
+                                image={notable}
+                                backgroundColor={backgroundColor}
+                                textColor={textColor}
+                            />
                         }
                     </div>
                 </Grid>
@@ -93,7 +112,10 @@ const ProjectsPanel = () => {
                                 hasHackathon={true} 
                                 hackathons={"youCode 2024"} 
                                 tools={[<img src={typescript} width={'30%'} />, <img src={react} width={'25%'}/>]}
-                                image={dareventure}/>
+                                image={dareventure}
+                                backgroundColor={backgroundColor}
+                                textColor={textColor}
+                            />
                         :
                             <ProjectCard                            
                                 title={"DareVenture"} 
@@ -103,7 +125,10 @@ const ProjectsPanel = () => {
                                 tools={[<img src={typescript} width={'25%'} />,<img src={react} width={'25%'}/>]}
                                 description={"A mobile app promoting well-being by offering rewards and offers with partnering companies for completing wellness tasks"}
                                 link={"https://github.com/gracetxgao/youcode2024"}
-                                image={dareventure}/>
+                                image={dareventure}
+                                backgroundColor={backgroundColor}
+                                textColor={textColor}
+                            />
                         }
                     </div>
                 </Grid>
@@ -117,7 +142,10 @@ const ProjectsPanel = () => {
                                 hasHackathon={true} 
                                 hackathons={"CPSC 210"} 
                                 tools={[<img src={java} width={'30%'}/>]}
-                                image={stock}/>
+                                image={stock}
+                                backgroundColor={backgroundColor}
+                                textColor={textColor}
+                            />
                         :
                             <ProjectCard                            
                                 title={"Stock Master"} 
@@ -127,7 +155,10 @@ const ProjectsPanel = () => {
                                 tools={[<img src={java} width={'20%'}/>]}
                                 description={"A stock market simulator with data visualization components. Built for my CPSC 210 term project."}
                                 link={"https://github.students.cs.ubc.ca/CPSC210-2023W-T2/project_a8b8b"}
-                                image={stock}/>
+                                image={stock}
+                                backgroundColor={backgroundColor}
+                                textColor={textColor}
+                            />
                         }
                     </div>
                 </Grid>

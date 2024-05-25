@@ -10,10 +10,12 @@ interface ProjectCardTypes {
     description: String;
     link: string;
     image: String;
+    backgroundColor: string
+    textColor: string
 }
 
 const ProjectCard = (props: ProjectCardTypes) => {
-    const { title, hackathons, hasHackathon, tools, description, link, image } = props
+    const { title, hackathons, hasHackathon, tools, description, link, image, backgroundColor, textColor } = props
     return (
         <>
             <Grid
@@ -24,8 +26,8 @@ const ProjectCard = (props: ProjectCardTypes) => {
                     position: 'relative',
                     backgroundImage: `url(${image})`,
                     backgroundSize: 'cover',
-                    backgroundColor: '#B8D4E8',
                     borderRadius: '10%',
+                    color: textColor,
                     '&::before': {
                         content: '""',
                         position: 'absolute',
@@ -33,7 +35,7 @@ const ProjectCard = (props: ProjectCardTypes) => {
                         left: 0,
                         right: 0,
                         bottom: 0,
-                        backgroundColor: 'rgba(184, 212, 232, 0.8)',
+                        backgroundColor: {backgroundColor},
                         borderRadius: '10%',
                         padding: '10px',
                     },

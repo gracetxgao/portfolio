@@ -8,10 +8,12 @@ interface ProjectCoverTypes {
     hackathons?: String;
     tools: Array<any>;
     image: String;
+    backgroundColor: string
+    textColor: string
 }
 
 const ProjectCover = (props: ProjectCoverTypes) => {
-    const { title, hasAward, hasHackathon, hackathons, tools, image } = props
+    const { title, hasAward, hasHackathon, hackathons, tools, image, backgroundColor, textColor } = props
     
     return (
     <Grid
@@ -22,8 +24,8 @@ const ProjectCover = (props: ProjectCoverTypes) => {
             position: 'relative',
             backgroundImage: `url(${image})`,
             backgroundSize: 'cover',
-            backgroundColor: '#B8D4E8',
             borderRadius: '10%',
+            color: textColor,
             '&::before': {
                 content: '""',
                 position: 'absolute',
@@ -31,7 +33,7 @@ const ProjectCover = (props: ProjectCoverTypes) => {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                backgroundColor: 'rgba(184, 212, 232, 0.8)',
+                backgroundColor: {backgroundColor},
                 borderRadius: '10%',
                 padding: '10px',
             },
@@ -44,7 +46,7 @@ const ProjectCover = (props: ProjectCoverTypes) => {
                     </Grid>
                 )}
                 {hasHackathon && (
-                    <Grid item xs={12} sm={hasAward ? 9 : 12} sx={{ zIndex: 100, display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-start', paddingRight: '5%',}}>
+                    <Grid item xs={12} sm={hasAward ? 9 : 12} sx={{ zIndex: 100, display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-start', paddingRight: '5%' }}>
                         <p style={{ fontSize: '200%', textAlign: 'end', whiteSpace: 'pre-wrap' }}>
                             {hackathons}
                         </p>
