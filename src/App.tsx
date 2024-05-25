@@ -43,7 +43,7 @@ const App = () => {
                     <AboutPanel textColor={theme.palette.primary.contrastText}/>
                     <ProjectsPanel textColor={theme.palette.primary.contrastText} backgroundColor={theme.palette.primary.light}/>
                     <ExperiencePanel textColor={theme.palette.primary.contrastText} backgroundColor={theme.palette.secondary.main} highlightColor={theme.palette.secondary.light}/>
-                    <SkillsPanel backgroundColor={theme.palette.secondary.main} shadowColor={theme.palette.secondary.dark}/>
+                    <SkillsPanel textColor={theme.palette.primary.contrastText} backgroundColor={theme.palette.secondary.main} shadowColor={theme.palette.secondary.dark}/>
                     <Footer textColor={theme.palette.primary.contrastText} />
                 </Stack>
             </Box>

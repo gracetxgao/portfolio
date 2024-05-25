@@ -57,14 +57,15 @@ const Skill = (props: SkillProps) => {
 interface SkillPanelProps {
     backgroundColor: string
     shadowColor: string
+    textColor: string
 }
 
 const SkillsPanel = (props: SkillPanelProps) => {
-    const { backgroundColor, shadowColor } = props
+    const { backgroundColor, shadowColor, textColor } = props
 
     return (
         <Box paddingInline={10}>
-            <h1 style={{ paddingLeft: '30px' }}>Skills</h1>
+            <h1 style={{ paddingLeft: '30px', color: textColor }}>Skills</h1>
             <Grid container>
                 <Skill tool={"Python"} logo={<img src={python} width={'45%'}/>} backgroundColor={backgroundColor} shadowColor={shadowColor}/>
                 <Skill tool={"Java"} logo={<img src={java} width={'40%'}/>} backgroundColor={backgroundColor} shadowColor={shadowColor}/>
