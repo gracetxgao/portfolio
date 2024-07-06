@@ -11,6 +11,7 @@ import stock from '../assets/stock.png';
 import ProjectCard from './ProjectCard';
 import ProjectCover from './ProjectCover';
 import endanger from '../assets/endanger.jpg';
+import spinecare from '../assets/spinecare.png';
 
 interface ProjectsPanelTypes {
     textColor: string;
@@ -20,7 +21,7 @@ interface ProjectsPanelTypes {
 const ProjectsPanel = (props: ProjectsPanelTypes) => {
     const { textColor, backgroundColor } = props
 
-    const [hovering, setHovering] = useState([false, false, false, false])
+    const [hovering, setHovering] = useState([false, false, false, false, false])
 
     const handleMouseOver = (i: number) => {
         setHovering(prev => {
@@ -42,6 +43,36 @@ const ProjectsPanel = (props: ProjectsPanelTypes) => {
         <Box paddingInline={10}>
             <h1 style={{ paddingLeft: '30px', color: textColor }}>Projects</h1>
             <Grid container>
+                <Grid item xs={6} sm={6}>
+                    <div onMouseOver={() => {handleMouseOver(5)}} onMouseOut={() => {handleMouseOut(5)}}
+                            style={{ marginBlock: '5%', marginInlineEnd: '5%', paddingLeft: '30px' }}>
+                            {!hovering[5] ? 
+                                <ProjectCover 
+                                    title={"spineCARE"} 
+                                    hasAward={false} 
+                                    hasHackathon={true} 
+                                    hackathons={"AI4Good Lab"} 
+                                    tools={[<img src={typescript} width={'30%'}/>,<img src={react} width={'40%'} />, ,<img src={flask} width={'40%'} />]}
+                                    image={spinecare}
+                                    backgroundColor={backgroundColor}
+                                    textColor={textColor}
+                                />
+                            :
+                                <ProjectCard                            
+                                    title={"spineCARE"} 
+                                    hasAward={false} 
+                                    hasHackathon={true} 
+                                    hackathons={"AI4Good Lab"} 
+                                    tools={[<img src={typescript} width={'30%'}/>,<img src={react} width={'40%'} />, ,<img src={flask} width={'40%'} />]}
+                                    description={"A scoliosis diagnosis aid to help patients and doctors monitor cases of AIS. Uses Microsoft's BiomedCLIP model and has achieved an 80\% accuracy rate."}
+                                    link={'https://github.com/gracetxgao/spinecare'}
+                                    image={spinecare}
+                                    backgroundColor={backgroundColor}
+                                    textColor={textColor}
+                                />
+                            }
+                        </div>
+                </Grid>
                 <Grid item xs={6} sm={6}>
                     <div onMouseOver={() => {handleMouseOver(0)}} onMouseOut={() => {handleMouseOut(0)}}
                             style={{ marginBlock: '5%', marginInlineEnd: '5%', paddingLeft: '30px' }}>

@@ -2,6 +2,8 @@ import { Box, Tab, Tabs, Grid } from '@mui/material';
 import * as React from 'react';
 import triumf from '../assets/triumf.jpg';
 import launchpad from '../assets/launchpad.jpg';
+import ai4good from '../assets/ai4good.jpg';
+
 
 interface TabPanelProps {
     index: number;
@@ -64,6 +66,7 @@ const ExperienceTabs = (props: ExperienceTabsProps) => {
                 <Tabs value={value} onChange={handleChange} textColor="inherit" >
                     <Tab label="TRIUMF" sx={{ color: textColor }} />
                     <Tab label="UBC Launch Pad" sx={{ color: textColor }} />
+                    <Tab label="AI4Good Lab" sx={{ color: textColor }} />
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}
@@ -85,6 +88,18 @@ const ExperienceTabs = (props: ExperienceTabsProps) => {
                     "Used React Native and Firebase for the first time!"
                 ]}
                 image={<img src={launchpad} width={'60%'} style={{ borderRadius: '10%' }} />}
+                backgroundColor={backgroundColor}
+                textColor={textColor}
+            />
+            <TabPanel value={value} index={2}
+                position={"Machine Learning Fellow"}
+                dates={"May 2024 - Jun 2024"}
+                description={[
+                    "Selected to participate in a machine learning program run by the <a href='https://www.ai4goodlab.com/' target='_blank' style='color: black;'>AI4Good Lab</a> at <a href='https://mila.quebec/en' target='_blank' style='color: black;'>Mila</a>, Quebec's AI institute",
+                    "Built a scoliosis diagnosis app with a team of six, and pitched our project to an audience of 100+",
+                    "Explored CNNs, RNNs, and reinforcement learning with mentors from Google DeepMind, Mila, and CIFAR"
+                ]}
+                image={<img src={ai4good} width={'60%'} style={{ borderRadius: '10%' }} />}
                 backgroundColor={backgroundColor}
                 textColor={textColor}
             />

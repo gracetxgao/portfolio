@@ -33,7 +33,7 @@ const IntroductionPanel = (props: IntroductionPanelTypes) => {
                             <a href="https://www.linkedin.com/in/gracetxgao/" target="_blank">
                                 <img src={linkedin} width={'8%'} style={{ marginRight: '5%', backgroundColor: darkMode ? 'white' : 'initial', padding: '2%', borderRadius: '50%' }}/>
                             </a>
-                            <a href="https://drive.google.com/file/d/1Wwk9bmDCGh9xUIiQHa-RE2UO5WwvFzXe/view?usp=sharing" target="_blank">
+                            <a href="https://drive.google.com/file/d/1iJ1WkvXJTjnX0CoQXeZpWBcdzFa4bgUV/view?usp=sharing" target="_blank">
                                 <img src={resume} width={'8%'}  style={{ backgroundColor: darkMode ? 'white' : 'initial', padding: '2%', borderRadius: '50%' }}/>
                             </a>
                         </div>
