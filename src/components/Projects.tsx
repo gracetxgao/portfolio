@@ -1,4 +1,4 @@
-import { Grid, Box, Typography, Link } from '@mui/material';
+import { Box, Typography, Link } from '@mui/material';
 
 interface ProjectItemTypes {
     textColor: string
@@ -35,7 +35,7 @@ const Projects = (props: ProjectTypes) => {
 
     return (
         <Box>
-            <Typography fontSize='2rem' fontWeight='500' pb={2}>projects</Typography>
+            <Typography color={textColor} fontSize='2rem' fontWeight='500' pb={2}>projects</Typography>
             <Box pb={10}>
                 {items.map((item, idx) => (
                     <ProjectItem 

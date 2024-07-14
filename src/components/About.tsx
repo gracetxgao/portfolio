@@ -33,13 +33,13 @@ const About = (props: AboutTypes) => {
                     </Typography>
                     <Box>
                         <Link href="https://github.com/gracetxgao" target="_blank">
-                            <img src={github} width={40} style={{ marginRight: '5%', backgroundColor: darkMode ? 'white' : 'initial', padding: '2%' }}/>
+                            <img src={github} width={40} style={{ marginRight: '5%', backgroundColor: darkMode ? 'white' : 'initial', padding: '2%', borderRadius: (darkMode ? 20 : 0) }}/>
                         </Link>
                         <Link href="https://www.linkedin.com/in/gracetxgao/" target="_blank">
-                            <img src={linkedin} width={40} style={{ marginRight: '5%', backgroundColor: darkMode ? 'white' : 'initial', padding: '2%' }}/>
+                            <img src={linkedin} width={40} style={{ marginRight: '5%', backgroundColor: darkMode ? 'white' : 'initial', padding: '2%', borderRadius: (darkMode ? 20 : 0) }}/>
                         </Link>
                         <Link href="https://drive.google.com/file/d/1iJ1WkvXJTjnX0CoQXeZpWBcdzFa4bgUV/view?usp=sharing" target="_blank">
-                            <img src={resume} width={40}  style={{ backgroundColor: darkMode ? 'white' : 'initial', padding: '2%' }}/>
+                            <img src={resume} width={40}  style={{ backgroundColor: darkMode ? 'white' : 'initial', padding: '2%', borderRadius: (darkMode ? 20 : 0) }}/>
                         </Link>
                     </Box>
                 </Box>

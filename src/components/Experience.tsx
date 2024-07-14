@@ -43,7 +43,7 @@ const Experience = (props: ExperienceTypes) => {
 
     return (
         <Box pb={10}>
-            <Typography fontSize='2rem' fontWeight='500' pb={2}>experience/volunteering</Typography>
+            <Typography color={textColor} fontSize='2rem' fontWeight='500' pb={2}>experience/volunteering</Typography>
             <Box>
                 {items.map((item, idx) => (
                     <ExperienceItem 
