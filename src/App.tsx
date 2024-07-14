@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Box, IconButton } from '@mui/material';
+import { Box, IconButton, GlobalStyles } from '@mui/material';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import darkTheme from './themes/DarkTheme';
@@ -25,6 +25,12 @@ const App = () => {
 
     return (
         <ThemeProvider theme={theme}>
+            <GlobalStyles
+                styles={{
+                    body: { margin: 0, padding: 0, boxSizing: 'border-box' },
+                    html: { margin: 0, padding: 0, boxSizing: 'border-box' },
+                }}
+            />
             <IconButton
                 sx={{
                     position: 'absolute',

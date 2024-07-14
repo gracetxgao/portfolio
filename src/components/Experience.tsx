@@ -15,10 +15,10 @@ const ExperienceItem = (props: ExperienceItemTypes) => {
 
     return (
         <Grid display='flex' justifyContent='space-between'>
-            <Grid item md={8} display='flex' justifyContent='start'>
+            <Grid item xs={6} sm={8} display='flex' justifyContent='start' mr={{ xs: 5, sm: 0}} sx={{ textAlign: 'start' }}>
                 <Typography color={textColor}>{title} @ <Link href={placeLink} target="_blank" underline="none" color={highlightColor}>{place}</Link></Typography>
             </Grid>
-            <Grid item md={4} display='flex' justifyContent='end'>
+            <Grid item xs={6} sm={4} display='flex' justifyContent='end'  sx={{ textAlign: 'end' }}>
                 <Typography color={textColor}>{start} - {end}</Typography>
             </Grid>
         </Grid>
