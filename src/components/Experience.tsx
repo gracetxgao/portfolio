@@ -46,7 +46,7 @@ const Experience: React.FC<ExperienceTypes> = ({ textColor, highlightColor }) =>
     ]
 
     return (
-        <Box pb={10} ref={ref}
+        <Box pb={{ xs: 3, sm: 10}} ref={ref}
             sx={{
                 opacity: inView ? 1 : 0,
                 transform: inView ? 'translateY(0)' : 'translateY(100px)',

@@ -38,7 +38,7 @@ const Projects: React.FC<ProjectTypes> = ({ textColor, highlightColor }) => {
     ]
 
     return (
-        <Box ref={ref}
+        <Box pb={{ xs: 3, sm: 10}} ref={ref}
             sx={{
                 opacity: inView ? 1 : 0,
                 transform: inView ? 'translateY(0)' : 'translateY(100px)',
@@ -48,7 +48,7 @@ const Projects: React.FC<ProjectTypes> = ({ textColor, highlightColor }) => {
             }}
         >
             <Typography color={textColor} fontSize='2rem' fontWeight='500' pb={2}>projects</Typography>
-            <Box pb={10}>
+            <Box>
                 {items.map((item, idx) => (
                     <ProjectItem 
                         textColor={textColor} 
