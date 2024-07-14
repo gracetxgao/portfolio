@@ -3,7 +3,10 @@ import { Grid, Box, Typography, Link } from '@mui/material';
 import photo from '../assets/photo.jpeg';
 import github from '../assets/github.png';
 import linkedin from '../assets/linkedin.png';
+import github_white from '../assets/github_white.png';
+import linkedin_white from '../assets/linkedin_white.png';
 import resume from '../assets/resume.png';
+import resume_white from '../assets/resume_white.png';
 
 interface AboutTypes {
     textColor: string
@@ -43,13 +46,13 @@ const About = (props: AboutTypes) => {
                     </Typography>
                     <Box>
                         <Link href="https://github.com/gracetxgao" target="_blank">
-                            <img src={github} width={40} style={{ marginRight: '5%', backgroundColor: darkMode ? 'white' : 'initial', padding: '2%', borderRadius: (darkMode ? 50 : 0) }}/>
+                            <img src={darkMode ? github_white : github} width={40} style={{ marginRight: '5%' }}/>
                         </Link>
                         <Link href="https://www.linkedin.com/in/gracetxgao/" target="_blank">
-                            <img src={linkedin} width={40} style={{ marginRight: '5%', backgroundColor: darkMode ? 'white' : 'initial', padding: '2%', borderRadius: (darkMode ? 50 : 0) }}/>
+                            <img src={darkMode ? linkedin_white : linkedin} width={40} style={{ marginRight: '5%' }}/>
                         </Link>
                         <Link href="https://drive.google.com/file/d/1iJ1WkvXJTjnX0CoQXeZpWBcdzFa4bgUV/view?usp=sharing" target="_blank">
-                            <img src={resume} width={40}  style={{ backgroundColor: darkMode ? 'white' : 'initial', padding: '2%', borderRadius: (darkMode ? 50 : 0) }}/>
+                            <img src={darkMode ? resume_white : resume} width={40}  />
                         </Link>
                     </Box>
                 </Box>
