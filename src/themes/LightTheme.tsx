@@ -3,19 +3,22 @@ import { createTheme } from '@mui/material/styles';
 const lightTheme = createTheme({
     palette: {
         primary: {
-            main: '#EEF8FF', // light blue (background)
+            main: '#000000', // black
             light: 'rgba(184, 212, 232, 0.8)', // mid blue (highlights)
-            dark: '#1C2231', // dark blue (headers)
-            contrastText: '#000000' // black
+            dark: '#000000', // black
+            contrastText: '#2D79ED' // blue links
         },
         secondary: {
-            main: '#FFFFFF', // white
+            main: '#2D79ED', // blue
             light: '#B8D4E8', // mid blue
             dark: '#808080' // grey
+        },
+        background: {
+            default: '#FFFFFF'
         }
     },
     typography: {
-        fontFamily: ['Lato', 'sans-serif'].join(','),
+        fontFamily: ['Nunito', 'sans-serif'].join(','),
     },
 });
 

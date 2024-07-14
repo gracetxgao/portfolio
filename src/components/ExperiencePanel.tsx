@@ -95,8 +95,7 @@ const ExperienceTabs = (props: ExperienceTabsProps) => {
                 position={"Machine Learning Fellow"}
                 dates={"May 2024 - Jun 2024"}
                 description={[
-                    "Selected to participate in a machine learning program run by the <a href='https://www.ai4goodlab.com/' target='_blank' style='color: black;'>AI4Good Lab</a> at <a href='https://mila.quebec/en' target='_blank' style='color: black;'>Mila</a>, Quebec's AI institute",
-                    "Built a scoliosis diagnosis app with a team of six, and pitched our project to an audience of 100+",
+                    "Built a scoliosis diagnosis app with a team of six at the <a href='https://www.ai4goodlab.com/' target='_blank' style='color: black;'>AI4Good Lab</a>, and pitched project to an audience of 100+",
                     "Explored CNNs, RNNs, and reinforcement learning with mentors from Google DeepMind, Mila, and CIFAR"
                 ]}
                 image={<img src={ai4good} width={'60%'} style={{ borderRadius: '10%' }} />}
