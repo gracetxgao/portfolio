@@ -22,7 +22,7 @@ const About = (props: AboutTypes) => {
                 flexDirection: {xs: 'column', lg: 'row'}, 
                 alignItems: 'center', 
                 justifyContent: 'center',
-                paddingTop: {xs: 10, lg: 0},
+                paddingTop: {xs: 2, sm: 0, lg: 0},
             }}
         >
             <Grid item xs={12} lg={4}>
@@ -31,7 +31,7 @@ const About = (props: AboutTypes) => {
             <Grid item xs={12} lg={8} 
                 sx={{ 
                     marginLeft: {xs: 0, lg: 10}, 
-                    marginTop: {xs: 10, lg: 0}, 
+                    marginTop: {xs: 2, sm: 5, lg: 0}, 
                     textAlign: {xs: 'center', md: 'start'},
                     color: textColor
                 }}>

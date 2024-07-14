@@ -29,7 +29,7 @@ const Projects = (props: ProjectTypes) => {
         ['Stranger Endanger', 'https://github.com/gracetxgao/stranger-endanger', 'Best Design @ SFU StormHacks 2024'],
         ['DareVenture', 'https://github.com/gracetxgao/DareVenture', 'CS Project Hub Award @ youCode 2024 x Arc\'teryx'],
         ['Stock Master', 'https://github.com/gracetxgao/stockmaster', 'UBC CPSC 210'],
-        ['notable', 'https://github.com/gracetxgao/notable', 'Best Education Hack @ MesoHacks 2022, 2nd @ Hack to School 2024 (MLH)'],
+        ['notable', 'https://github.com/gracetxgao/notable', 'Best Education Hack @ MesoHacks 2022, 2nd @ Hack to School 2022 (MLH)'],
 
     ]
 

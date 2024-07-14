@@ -41,6 +41,7 @@ const App = () => {
                     justifyContent: 'center',
                     alignItems: 'center',
                     backgroundColor: theme.palette.background.default,
+                    paddingInline: {xs: 10, sm: 0}
                 }}
             >
                 <Box sx={{ width: {sm: '80vw', md: '50vw'}}} >             
