@@ -1,4 +1,5 @@
 import { Box, Typography, Link } from '@mui/material';
+import { useInView } from 'react-intersection-observer';
 
 interface ProjectItemTypes {
     textColor: string
@@ -21,8 +22,11 @@ interface ProjectTypes {
     highlightColor: string
 }
 
-const Projects = (props: ProjectTypes) => {
-    const { textColor, highlightColor } = props
+const Projects: React.FC<ProjectTypes> = ({ textColor, highlightColor }) => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
 
     const items = [
         ['spineCare', 'https://github.com/gracetxgao/spineCARE', 'AI4Good Lab 2024'],
@@ -34,7 +38,15 @@ const Projects = (props: ProjectTypes) => {
     ]
 
     return (
-        <Box>
+        <Box ref={ref}
+            sx={{
+                opacity: inView ? 1 : 0,
+                transform: inView ? 'translateY(0)' : 'translateY(100px)',
+                transition: 'opacity 1.0s ease-out, transform 1.0s ease-out',
+                color: textColor,
+                margin: '2rem 0',
+            }}
+        >
             <Typography color={textColor} fontSize='2rem' fontWeight='500' pb={2}>projects</Typography>
             <Box pb={10}>
                 {items.map((item, idx) => (

@@ -1,4 +1,5 @@
 import { Grid, Box, Typography, Link } from '@mui/material';
+import { useInView } from 'react-intersection-observer';
 
 interface ExperienceItemTypes {
     textColor: string
@@ -30,8 +31,11 @@ interface ExperienceTypes {
     highlightColor: string
 }
 
-const Experience = (props: ExperienceTypes) => {
-    const { textColor, highlightColor } = props
+const Experience: React.FC<ExperienceTypes> = ({ textColor, highlightColor }) => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
 
     const items = [
         ['undergraduate research assistant', 'NC4 Lab', 'https://www.nc4.sbme.ubc.ca', 'jul 2024', 'present'],
@@ -42,7 +46,14 @@ const Experience = (props: ExperienceTypes) => {
     ]
 
     return (
-        <Box pb={10}>
+        <Box pb={10} ref={ref}
+            sx={{
+                opacity: inView ? 1 : 0,
+                transform: inView ? 'translateY(0)' : 'translateY(100px)',
+                transition: 'opacity 1.0s ease-out, transform 1.0s ease-out',
+                color: textColor,
+                margin: '2rem 0',
+            }}>
             <Typography color={textColor} fontSize='2rem' fontWeight='500' pb={2}>experience/volunteering</Typography>
             <Box>
                 {items.map((item, idx) => (
