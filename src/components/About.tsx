@@ -15,14 +15,24 @@ const About = (props: AboutTypes) => {
     const { textColor, highlightColor, darkMode } = props
 
     return (
-        <Box sx={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: {sm: 'center'} }}>
-            <Grid item sm={12} md={4}>
+        <Box
+            sx={{ 
+                height: '100vh', 
+                display: 'flex', 
+                flexDirection: {xs: 'column', lg: 'row'}, 
+                alignItems: 'center', 
+                justifyContent: 'center',
+                paddingTop: {xs: 10, lg: 0},
+            }}
+        >
+            <Grid item xs={12} lg={4}>
                 <img src={photo} style={{ height: '50vh', boxShadow: `10px 10px 10px grey`}}/>
             </Grid>
-            <Grid item sm={12} md={8} 
+            <Grid item xs={12} lg={8} 
                 sx={{ 
-                    marginLeft: {sm: 0, md: 10}, 
-                    textAlign: {sm: 'center', md: 'start'},
+                    marginLeft: {xs: 0, lg: 10}, 
+                    marginTop: {xs: 10, lg: 0}, 
+                    textAlign: {xs: 'center', md: 'start'},
                     color: textColor
                 }}>
                 <Box>
