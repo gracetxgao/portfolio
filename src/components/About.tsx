@@ -1,10 +1,9 @@
 import { Grid, Box, Typography, Link } from '@mui/material';
+
 import photo from '../assets/photo.jpeg';
 import github from '../assets/github.png';
 import linkedin from '../assets/linkedin.png';
 import resume from '../assets/resume.png';
-import at from '../assets/at.png';
-import arrow from '../assets/arrow.png';
 
 interface AboutTypes {
     textColor: string

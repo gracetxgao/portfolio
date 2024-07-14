@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 interface FooterProps {
     textColor: string
@@ -9,7 +9,7 @@ const Footer = (props: FooterProps) => {
 
     return (
         <Box sx={{ display: 'flex', justifyContent: 'center', color: textColor }}>
-            <p>© 2024 Grace Gao</p>
+            <Typography>© 2024 Grace Gao</Typography>
         </Box>
     )
 }

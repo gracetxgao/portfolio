@@ -1,20 +1,13 @@
-import { Stack } from '@mui/material';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import IntroductionPanel from './components/IntroductionPanel';
-import About from './components/About';
-import ProjectsPanel from './components/ProjectsPanel';
-import ExperiencePanel from './components/ExperiencePanel';
-import SkillsPanel from './components/SkillsPanel';
-import AboutPanel from './components/AboutPanel';
-import Footer from './components/Footer';
 import { useState } from 'react';
-import { AppBar, Button, Container, Grid, Toolbar, Typography } from '@mui/material';
-import sun from '../src/assets/sun.png';
-import moon from '../src/assets/moon.png';
+
+import Box from '@mui/material/Box';
+
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import darkTheme from './themes/DarkTheme';
 import lightTheme from './themes/LightTheme';
+
+import About from './components/About';
+import Footer from './components/Footer';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 
