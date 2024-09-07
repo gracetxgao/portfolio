@@ -41,8 +41,8 @@ const About = (props: AboutTypes) => {
                 <Box>
                     <Typography fontSize='3rem' fontWeight='500'>grace gao</Typography>
                     <Typography fontSize='1.5rem' paddingBlock={2}>
-                        hi! i'm a second-year computer science + math student at the University of British Columbia, 
-                        and 2023 <Link href="https://schulichleaders.com/scholars/grace-gao/"  target="_blank" underline="none" color={highlightColor}>{'schulich leader scholar'}</Link> :)
+                        hi! i'm a computer science + math student at the university of british columbia, 
+                        and 2023 <Link href="https://schulichleaders.com"  target="_blank" underline="none" color={highlightColor}>{'schulich leader scholar'}</Link> :)
                     </Typography>
                     <Box>
                         <Link href="https://github.com/gracetxgao" target="_blank">
@@ -51,9 +51,9 @@ const About = (props: AboutTypes) => {
                         <Link href="https://www.linkedin.com/in/gracetxgao/" target="_blank">
                             <img src={darkMode ? linkedin_white : linkedin} width={40} style={{ marginRight: '5%' }}/>
                         </Link>
-                        <Link href="https://drive.google.com/file/d/1iJ1WkvXJTjnX0CoQXeZpWBcdzFa4bgUV/view?usp=sharing" target="_blank">
+                        {/* <Link href="https://drive.google.com/file/d/1qv1QPNAxiCIuUpNQci0HKjfHhUJB7QGl/view?usp=sharing" target="_blank">
                             <img src={darkMode ? resume_white : resume} width={40}  />
-                        </Link>
+                        </Link> */}
                     </Box>
                 </Box>
             </Grid>

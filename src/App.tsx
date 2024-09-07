@@ -39,7 +39,7 @@ const App = () => {
                 }}
                 onClick={toggleDarkMode}
             >
-                <img src={darkMode ? sun : moon} width={36} height={36} style={{ borderRadius: (darkMode ? 50 : 0)}}/>
+                <img src={darkMode ? sun : moon} width={36} height={36} />
             </IconButton>
             <Box
                 sx={{
