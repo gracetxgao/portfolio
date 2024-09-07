@@ -24,7 +24,7 @@ interface ProjectTypes {
 
 const Projects: React.FC<ProjectTypes> = ({ textColor, highlightColor }) => {
     const { ref, inView } = useInView({
-        triggerOnce: true,
+        triggerOnce: false,
         threshold: 0.1,
     });
 

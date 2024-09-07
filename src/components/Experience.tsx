@@ -33,7 +33,7 @@ interface ExperienceTypes {
 
 const Experience: React.FC<ExperienceTypes> = ({ textColor, highlightColor }) => {
     const { ref, inView } = useInView({
-        triggerOnce: true,
+        triggerOnce: false,
         threshold: 0.1,
     });
 

@@ -1,12 +1,14 @@
-import { Grid, Box, Typography, Link } from '@mui/material';
+import { useState } from 'react';
+import { Grid, Box, Typography, Link, Snackbar } from '@mui/material';
 
 import photo from '../assets/photo.jpeg';
 import github from '../assets/github.png';
 import linkedin from '../assets/linkedin.png';
 import github_white from '../assets/github_white.png';
 import linkedin_white from '../assets/linkedin_white.png';
-import resume from '../assets/resume.png';
-import resume_white from '../assets/resume_white.png';
+import email from '../assets/email.png';
+import email_white from '../assets/email_white.png';
+
 
 interface AboutTypes {
     textColor: string
@@ -16,6 +18,17 @@ interface AboutTypes {
 
 const About = (props: AboutTypes) => {
     const { textColor, highlightColor, darkMode } = props
+
+    const [snackbarOpen, setSnackbarOpen] = useState(false);
+
+    const handleCopyEmail = () => {
+        navigator.clipboard.writeText("gracetxgao@gmail.com");
+        setSnackbarOpen(true);
+    };
+
+    const handleSnackbarClose = () => {
+        setSnackbarOpen(false);
+    };
 
     return (
         <Box
@@ -45,18 +58,24 @@ const About = (props: AboutTypes) => {
                         and 2023 <Link href="https://schulichleaders.com"  target="_blank" underline="none" color={highlightColor}>{'schulich leader scholar'}</Link> :)
                     </Typography>
                     <Box>
-                        <Link href="https://github.com/gracetxgao" target="_blank">
-                            <img src={darkMode ? github_white : github} width={40} style={{ marginRight: '5%' }}/>
-                        </Link>
                         <Link href="https://www.linkedin.com/in/gracetxgao/" target="_blank">
                             <img src={darkMode ? linkedin_white : linkedin} width={40} style={{ marginRight: '5%' }}/>
                         </Link>
-                        {/* <Link href="https://drive.google.com/file/d/1qv1QPNAxiCIuUpNQci0HKjfHhUJB7QGl/view?usp=sharing" target="_blank">
-                            <img src={darkMode ? resume_white : resume} width={40}  />
-                        </Link> */}
+                        <Link href="https://github.com/gracetxgao" target="_blank">
+                            <img src={darkMode ? github_white : github} width={40} style={{ marginRight: '5%' }}/>
+                        </Link>
+                        <Link onClick={handleCopyEmail}>
+                            <img src={darkMode ? email_white : email} width={40} style={{ marginRight: '5%' }} />
+                        </Link>
                     </Box>
                 </Box>
             </Grid>
+            <Snackbar
+                open={snackbarOpen}
+                autoHideDuration={3000}
+                onClose={handleSnackbarClose}
+                message="email copied to clipboard"
+            />
         </Box>
     )
 }
