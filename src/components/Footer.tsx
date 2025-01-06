@@ -6,10 +6,11 @@ interface FooterProps {
 
 const Footer = (props: FooterProps) => {
     const { textColor } = props
+    const year = new Date().getFullYear();
 
     return (
         <Box pb={2} sx={{ display: 'flex', justifyContent: 'center', color: textColor }}>
-            <Typography>© 2024 Grace Gao</Typography>
+            <Typography>© {year} Grace Gao</Typography>
         </Box>
     )
 }
