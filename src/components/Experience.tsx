@@ -38,13 +38,14 @@ const Experience: React.FC<ExperienceTypes> = ({ textColor, highlightColor }) =>
     });
 
     const items = [
-        ['software engineer intern', 'Graycore', 'https://www.graycore.io', 'sep 2024', 'present'],
-        ['undergraduate teaching assistant', 'UBC Department of Computer Science', 'https://www.cs.ubc.ca/', 'sep 2024', 'present'],
+        ['[incoming] software engineer intern', 'Datadog', 'https://www.datadoghq.com/', 'may 2025', 'aug 2025'],
+        ['webmaster', 'UBC Women in Computer Science', 'https://ubcwics.com/', 'oct 2024', 'present'],
         ['undergraduate research assistant', 'UBC - NC4 Lab', 'https://www.nc4.sbme.ubc.ca', 'jul 2024', 'present'],
+        ['undergraduate teaching assistant', 'UBC CS', 'https://www.cs.ubc.ca/', 'sep 2024', 'dec 2024'],
+        ['software engineer intern', 'Graycore', 'https://www.graycore.io', 'sep 2024', 'dec 2024'],
         ['machine learning fellow', 'Mila - AI4Good Lab', 'https://www.ai4goodlab.com', 'may 2024', 'jun 2024'],
         ['software developer', 'UBC Launch Pad', 'https://www.ubclaunchpad.com', 'sep 2023', 'apr 2024'],
-        ['research intern', 'TRIUMF', 'https://www.triumf.ca', 'jul 2023', 'aug 2023'],
-
+        ['research intern', 'TRIUMF', 'https://www.triumf.ca', 'jul 2023', 'aug 2023']
     ]
 
     return (

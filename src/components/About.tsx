@@ -12,12 +12,11 @@ import email_white from '../assets/email_white.png';
 
 interface AboutTypes {
     textColor: string
-    highlightColor: string
-    darkMode: Boolean
+    darkMode: boolean
 }
 
 const About = (props: AboutTypes) => {
-    const { textColor, highlightColor, darkMode } = props
+    const { textColor, darkMode } = props
 
     const [snackbarOpen, setSnackbarOpen] = useState(false);
 
@@ -54,19 +53,45 @@ const About = (props: AboutTypes) => {
                 <Box>
                     <Typography fontSize='3rem' fontWeight='500'>grace gao</Typography>
                     <Typography fontSize='1.5rem' paddingBlock={2}>
-                        hi! i'm a computer science + math student at the university of british columbia, 
-                        and 2023 <Link href="https://schulichleaders.com"  target="_blank" underline="none" color={highlightColor}>{'schulich leader scholar'}</Link> :)
+                        hi! i'm grace, a cs+math student attending the university of british columbia on a full-ride scholarship :)
                     </Typography>
                     <Box>
-                        <Link href="https://www.linkedin.com/in/gracetxgao/" target="_blank">
-                            <img src={darkMode ? linkedin_white : linkedin} width={40} style={{ marginRight: '5%' }}/>
-                        </Link>
-                        <Link href="https://github.com/gracetxgao" target="_blank">
-                            <img src={darkMode ? github_white : github} width={40} style={{ marginRight: '5%' }}/>
-                        </Link>
-                        <Link onClick={handleCopyEmail}>
-                            <img src={darkMode ? email_white : email} width={40} style={{ marginRight: '5%' }} />
-                        </Link>
+                    <Link href="https://www.linkedin.com/in/gracetxgao/" target="_blank">
+                        <img
+                            src={darkMode ? linkedin_white : linkedin}
+                            width={40}
+                            style={{
+                                marginRight: '5%',
+                                transition: 'transform 0.2s',
+                            }}
+                            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
+                            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+                        />
+                    </Link>
+                    <Link href="https://github.com/gracetxgao" target="_blank">
+                        <img
+                            src={darkMode ? github_white : github}
+                            width={40}
+                            style={{
+                                marginRight: '5%',
+                                transition: 'transform 0.2s',
+                            }}
+                            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
+                            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+                        />
+                    </Link>
+                    <Link onClick={handleCopyEmail}>
+                        <img
+                            src={darkMode ? email_white : email}
+                            width={40}
+                            style={{
+                                marginRight: '5%',
+                                transition: 'transform 0.2s',
+                            }}
+                            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
+                            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+                        />
+                    </Link>
                     </Box>
                 </Box>
             </Grid>

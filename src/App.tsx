@@ -21,7 +21,7 @@ const App = () => {
         setDarkMode(prevMode => !prevMode);
     };
 
-    let theme = darkMode ? createTheme(darkTheme) : createTheme(lightTheme)
+    const theme = darkMode ? createTheme(darkTheme) : createTheme(lightTheme)
 
     return (
         <ThemeProvider theme={theme}>
@@ -51,7 +51,7 @@ const App = () => {
                 }}
             >
                 <Box sx={{ width: {sm: '80vw', md: '50vw'}}} >             
-                    <About textColor={theme.palette.primary.main} highlightColor={theme.palette.secondary.main} darkMode={darkMode}/>
+                    <About textColor={theme.palette.primary.main} darkMode={darkMode}/>
                     <Experience textColor={theme.palette.primary.main} highlightColor={theme.palette.secondary.main}/>
                     <Projects textColor={theme.palette.primary.main} highlightColor={theme.palette.secondary.main}/>
                     <Footer textColor={theme.palette.primary.main} />

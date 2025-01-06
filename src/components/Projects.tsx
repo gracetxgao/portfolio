@@ -29,7 +29,8 @@ const Projects: React.FC<ProjectTypes> = ({ textColor, highlightColor }) => {
     });
 
     const items = [
-        ['spineCare', 'https://github.com/gracetxgao/spineCARE', 'AI4Good Lab 2024'],
+        ['VerbaTeX', 'https://github.com/leozhang14/VerbaTeX', 'Best Use of Defang @ Hack the North 2024'],
+        ['spineCARE', 'https://github.com/gracetxgao/spineCARE', 'AI4Good Lab 2024'],
         ['Stranger Endanger', 'https://github.com/gracetxgao/stranger-endanger', 'Best Design @ SFU StormHacks 2024'],
         ['DareVenture', 'https://github.com/gracetxgao/DareVenture', 'CS Project Hub Award @ youCode 2024 x Arc\'teryx'],
         ['Stock Master', 'https://github.com/gracetxgao/stockmaster', 'UBC CPSC 210'],
