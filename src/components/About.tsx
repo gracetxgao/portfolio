@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Grid, Box, Typography, Link, Snackbar } from '@mui/material';
 
-import photo from '../assets/photo.jpeg';
+import me from '../assets/DSC04842.jpg';
 import github from '../assets/github.png';
 import linkedin from '../assets/linkedin.png';
 import github_white from '../assets/github_white.png';
@@ -41,7 +41,7 @@ const About = (props: AboutTypes) => {
             }}
         >
             <Grid item xs={12} sm={4}>
-                <img src={photo} style={{ height: '50vh', boxShadow: `10px 10px 10px grey`}}/>
+                <img src={me} style={{ height: '50vh', boxShadow: `10px 10px 10px grey`}}/>
             </Grid>
             <Grid item xs={12} sm={8} 
                 sx={{ 

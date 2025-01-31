@@ -13,7 +13,9 @@ const ProjectItem = (props: ProjectItemTypes) => {
     const { textColor, highlightColor, title, github, place } = props
 
     return (
+      <Box pb={0.5}>
         <Typography color={textColor}><Link href={github} target="_blank" underline="none" color={highlightColor}>{title}</Link> - {place}</Typography>
+      </Box>
     )
 }
 

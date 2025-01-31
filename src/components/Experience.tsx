@@ -15,7 +15,7 @@ const ExperienceItem = (props: ExperienceItemTypes) => {
     const { textColor, highlightColor, title, place, placeLink, start, end} = props
 
     return (
-        <Grid display='flex' justifyContent='space-between'>
+        <Grid display='flex' justifyContent='space-between' pb={0.5}>
             <Grid item xs={6} sm={8} display='flex' justifyContent='start' mr={{ xs: 5, sm: 0}} sx={{ textAlign: 'start' }}>
                 <Typography color={textColor}>{title} @ <Link href={placeLink} target="_blank" underline="none" color={highlightColor}>{place}</Link></Typography>
             </Grid>
@@ -49,7 +49,7 @@ const Experience: React.FC<ExperienceTypes> = ({ textColor, highlightColor }) =>
     ]
 
     return (
-        <Box pb={{ xs: 3, sm: 10}} ref={ref}
+        <Box pb={{ xs: 2, sm: 4}} ref={ref}
             sx={{
                 opacity: inView ? 1 : 0,
                 transform: inView ? 'translateY(0)' : 'translateY(100px)',
