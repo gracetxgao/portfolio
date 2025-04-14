@@ -39,8 +39,8 @@ const Experience: React.FC<ExperienceTypes> = ({ textColor, highlightColor }) =>
 
     const items = [
         ['[incoming] software engineer intern', 'Datadog', 'https://www.datadoghq.com/', 'may 2025', 'aug 2025'],
-        ['webmaster', 'UBC Women in Computer Science', 'https://ubcwics.com/', 'oct 2024', 'present'],
         ['undergraduate research assistant', 'UBC - NC4 Lab', 'https://www.nc4.sbme.ubc.ca', 'jul 2024', 'present'],
+        ['webmaster', 'UBC Women in Computer Science', 'https://ubcwics.com/', 'oct 2024', 'apr 2025'],
         ['undergraduate teaching assistant', 'UBC CS', 'https://www.cs.ubc.ca/', 'sep 2024', 'dec 2024'],
         ['software engineer intern', 'Graycore', 'https://www.graycore.io', 'sep 2024', 'dec 2024'],
         ['machine learning fellow', 'Mila - AI4Good Lab', 'https://www.ai4goodlab.com', 'may 2024', 'jun 2024'],

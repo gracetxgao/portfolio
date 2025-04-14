@@ -53,7 +53,7 @@ const About = (props: AboutTypes) => {
                 <Box>
                     <Typography fontSize='3rem' fontWeight='500'>grace gao</Typography>
                     <Typography fontSize='1.5rem' paddingBlock={2}>
-                        hi! i'm grace, a cs+math student attending the university of british columbia on a full-ride scholarship :)
+                        hi! i'm grace, a cs+math student at the university of british columbia on a full-ride scholarship
                     </Typography>
                     <Box>
                     <Link href="https://www.linkedin.com/in/gracetxgao/" target="_blank">
