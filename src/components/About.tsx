@@ -12,11 +12,12 @@ import email_white from '../assets/email_white.png';
 
 interface AboutTypes {
     textColor: string
+    highlightColor: string
     darkMode: boolean
 }
 
 const About = (props: AboutTypes) => {
-    const { textColor, darkMode } = props
+    const { textColor, highlightColor, darkMode } = props
 
     const [snackbarOpen, setSnackbarOpen] = useState(false);
 
@@ -53,7 +54,7 @@ const About = (props: AboutTypes) => {
                 <Box>
                     <Typography fontSize='3rem' fontWeight='500'>grace gao</Typography>
                     <Typography fontSize='1.5rem' paddingBlock={2}>
-                        hi! i'm grace, a cs+math student at the university of british columbia on a full-ride scholarship
+                        hi! i'm grace, a cs+math student at the university of british columbia on a <Link href="https://schulichleaders.com/" target="_blank" underline="none" sx={{color: textColor, "&:hover": {color: highlightColor}}}>full-ride scholarship</Link>
                     </Typography>
                     <Box>
                     <Link href="https://www.linkedin.com/in/gracetxgao/" target="_blank">
