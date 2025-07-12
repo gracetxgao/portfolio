@@ -6,18 +6,47 @@ interface ProjectItemTypes {
     highlightColor: string
     title: string
     github: string
-    place: string
+    award?: string
+    event: string
+    website?: string
 }
 
 const ProjectItem = (props: ProjectItemTypes) => {
-    const { textColor, highlightColor, title, github, place } = props
+  const { textColor, highlightColor, title, github, award, event, website } = props
 
-    return (
-      <Box pb={0.5}>
-        <Typography color={textColor}><Link href={github} target="_blank" underline="none" color={highlightColor}>{title}</Link> - {place}</Typography>
-      </Box>
-    )
+  return (
+    <Box pb={0.5}>
+      <Typography color={textColor}>
+        <Link href={github} target="_blank" underline="none" color={highlightColor}>
+          {title}
+        </Link>
+        {" - "}
+        {(award && website) ? (
+          <>
+            {award} @ <Link 
+              href={website} 
+              target="_blank" 
+              underline="none" 
+              sx={{
+                color: textColor,
+                "&:hover": {
+                  color: highlightColor,
+                },
+              }}
+            >
+              {event}
+            </Link>
+          </>
+        ) : (
+          <>
+            {event}
+          </>
+        )}
+      </Typography>
+    </Box>
+  )
 }
+
 
 interface ProjectTypes {
     textColor: string
@@ -30,15 +59,47 @@ const Projects: React.FC<ProjectTypes> = ({ textColor, highlightColor }) => {
         threshold: 0.1,
     });
 
-    const items = [
-        ['VerbaTeX', 'https://github.com/leozhang14/VerbaTeX', 'Best Use of Defang @ Hack the North 2024'],
-        ['spineCARE', 'https://github.com/gracetxgao/spineCARE', 'AI4Good Lab 2024'],
-        ['Stranger Endanger', 'https://github.com/gracetxgao/stranger-endanger', 'Best Design @ SFU StormHacks 2024'],
-        ['DareVenture', 'https://github.com/gracetxgao/DareVenture', 'CS Project Hub Award @ youCode 2024 x Arc\'teryx'],
-        ['Stock Master', 'https://github.com/gracetxgao/stockmaster', 'UBC CPSC 210'],
-        ['notable', 'https://github.com/gracetxgao/notable', 'Best Education Hack @ MesoHacks 2022, 2nd @ Hack to School 2022 (MLH)'],
-
+    const items: Omit<ProjectItemTypes, 'textColor' | 'highlightColor'>[] = [
+      {
+        title: 'VerbaTeX',
+        github: 'https://github.com/leozhang14/VerbaTeX',
+        award: 'Best Use of Defang',
+        event: 'Hack the North 2024',
+        website: 'https://hackthenorth2024.devpost.com',
+      },
+      {
+        title: 'spineCARE',
+        github: 'https://github.com/gracetxgao/spineCARE',
+        event: 'AI4Good Lab 2024',
+      },
+      {
+        title: 'Stranger Endanger',
+        github: 'https://github.com/gracetxgao/stranger-endanger',
+        award: 'Best Design',
+        event: 'StormHacks 2024',
+        website: 'https://stormhacks.devpost.com',
+      },
+      {
+        title: 'DareVenture',
+        github: 'https://github.com/gracetxgao/DareVenture',
+        award: 'CS Project Hub Award',
+        event: "youCode 2024",
+        website: 'https://youcode-2024.devpost.com',
+      },
+      {
+        title: 'Stock Master',
+        github: 'https://github.com/gracetxgao/stockmaster',
+        event: 'UBC CPSC 210',
+      },
+      {
+        title: 'notable',
+        github: 'https://github.com/gracetxgao/notable',
+        award: 'Best Education Hack',
+        event: 'MesoHacks 2022',
+        website: 'https://mesohacks2022.devfolio.co/overview',
+      }
     ]
+    
 
     return (
         <Box pb={{ xs: 3, sm: 10}} ref={ref}
@@ -52,18 +113,15 @@ const Projects: React.FC<ProjectTypes> = ({ textColor, highlightColor }) => {
         >
             <Typography color={textColor} fontSize='2rem' fontWeight='500' pb={2}>projects</Typography>
             <Box>
-                {items.map((item, idx) => (
-                    <ProjectItem 
-                        textColor={textColor} 
-                        highlightColor={highlightColor} 
-                        title={item[0]}
-                        github={item[1]}
-                        place={item[2]}
-                        key={idx}
-                    />
-                ))}
+              {items.map((item, idx) => (
+                <ProjectItem 
+                  key={idx} 
+                  {...item} 
+                  textColor={textColor}
+                  highlightColor={highlightColor}
+                />
+              ))}
             </Box>
-
         </Box>
     )
 }
