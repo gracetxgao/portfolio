@@ -52,7 +52,7 @@ const About = (props: AboutTypes) => {
                     color: textColor
                 }}>
                 <Box>
-                    <Typography fontSize='3rem' fontWeight='500'>grace gao</Typography>
+                    <Typography fontSize='3rem' fontWeight='500'>Grace Gao</Typography>
                     <Typography fontSize='1.5rem' paddingBlock={2}>
                         hi! i'm grace, a cs+math student at the university of british columbia on a <Link href="https://schulichleaders.com/" target="_blank" underline="none" sx={{color: textColor, "&:hover": {color: highlightColor}}}>full-ride scholarship</Link>
                     </Typography>
